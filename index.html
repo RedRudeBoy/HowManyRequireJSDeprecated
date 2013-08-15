@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<!--manifest="HowMany.manifest"-->
+	<head>
+		<!-- Configurations -->
+		<title>HowMany</title>
+		<meta name="application-name" content="HowMany">
+		<meta name="viewport" content="width=device-width">
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="es-ES" />
+
+		<meta name="description" lang="en" content="How Many Days have been since..." />
+		<meta name="description" lang="ca" content="Quants dies fa que no faig..." />
+		<meta name="description" lang="es" content="Cuantos dias hace que no hago..." />
+		
+		<!-- Every big corp whants her meta... -->
+		
+		<!-- https://github.com/h5bp/html5-boilerplate/blob/master/doc/extend.md#give-your-pinned-site-a-tooltip -->
+		<meta name="msapplication-tooltip" content="How Many Days have been since...">
+		<!-- https://github.com/h5bp/html5-boilerplate/blob/master/doc/extend.md#jump-list-tasks-for-pinned-sites 
+		<meta name="msapplication-task" content="name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico">
+		<meta name="msapplication-task" content="name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico">-->
+		
+		<!--https://github.com/h5bp/html5-boilerplate/blob/master/doc/extend.md#ios-web-apps -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- https://github.com/h5bp/html5-boilerplate/blob/master/doc/extend.md#install-a-chrome-web-store-app 
+		https://developers.google.com/chrome/web-store/docs/inline_installation
+		<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/APP_ID">-->
+		
+		<meta name="keywords" content="" />
+		<meta name="robots" content="all" />
+		<meta name="googlebot" content="all" />
+		<!-- https://github.com/h5bp/html5-boilerplate/blob/master/doc/extend.md#firefox-and-ie-search-plugins
+		<link rel="search" title="" type="application/opensearchdescription+xml" href="">-->
+
+
+		<!-- Icons & favicon -->
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="shortcut icon" type="image/icon" href="/favicon.ico" />
+		<!-- For third-generation iPad with high-resolution Retina display: (apple-touch-icon-precomposed or apple-touch-icon)-->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+		<!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120-precomposed.png">
+		<!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+		<!-- For first- and second-generation iPad: -->
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+		<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+		<!-- Meta, CSS & JS for avoid problems with IE & old browsers -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="stylesheet" href="stylesheets/normalize.min.css">
+		<!--[if lt IE 9]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+		<![endif]-->
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="stylesheets/HTML5Boilerplate.css">
+		<link rel="stylesheet" href="stylesheets/bootstrap.routesfix.min.css">
+		<link rel="stylesheet" href="stylesheets/bootstrap-responsive.min.css">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+		<!--<link rel="stylesheet" href="stylesheets/main.css">-->
+		<!--<link rel="stylesheet" href="stylesheets/jquery.mobile-1.1.0.min.css">-->
+
+		<!-- Google Fonts 
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+		-->
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+<!-- Layout -->
+<script type="text/x-handlebars">
+{{partial navbar}}
+<div class="container" style="margin-top: 50px;">
+	{{outlet}}
+</div>
+</script>
+<!-- navbar -->
+<script type="text/x-handlebars" data-template-name="_navbar">
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="#">How Many</a>
+		</div>
+	</div>
+</div>
+</script>
+
+<!-- Login -->
+<script type="text/x-handlebars" data-template-name="login">
+<div class="hero-unit">
+	<h1 id="info-panel"></h1>
+	<p id="info-panel-long"></p>
+	<!--Add a button for the user to click to initiate auth sequence -->
+	{{#view App.DoLoginView}}
+	<button id="authorize-button">Authorize</button>
+	{{/view}}
+</div>
+</script>
+
+<!-- HMListTags -->
+<script type="text/x-handlebars" data-template-name="HMListTags">
+{{view App.HMListTagsToolbarView}}
+<div id="HMListTags">
+	{{outlet}}
+</div>
+</script>
+<script type="text/x-handlebars" data-template-name="HMListTagsToolbar">
+<div id="HMListTagsToolbar">
+	<span>HMListTagsToolbar</span>
+	<ul>
+		<li>{{#linkTo 'HMListTags.bigIcons'}}Big Icons{{/linkTo}}</li>
+		<li>{{#linkTo 'HMListTags.windRose'}}Wind Rose{{/linkTo}}</li>
+		<li>{{#linkTo 'HMListTags.users'}}Users{{/linkTo}}</li>
+		<li>{{#linkTo 'HMListTags.history'}}History{{/linkTo}}</li>
+	</ul>
+</div>
+</script>
+<script type="text/x-handlebars" data-template-name="HMListTagsBigIcons">
+<style>
+.show-grid {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.show-grid [class*="span"] {
+  background-color: #eee;
+  text-align: center;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  min-height: 40px;
+  line-height: 40px;
+}
+.show-grid [class*="span"]:hover {
+  background-color: #ddd;
+}
+.show-grid .show-grid {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.show-grid .show-grid [class*="span"] {
+  margin-top: 5px;
+}
+.show-grid [class*="span"] [class*="span"] {
+  background-color: #ccc;
+}
+.show-grid [class*="span"] [class*="span"] [class*="span"] {
+  background-color: #999;
+}
+
+	td.space {
+		height: 40px;
+	}
+	</style>
+<div id="HMListTagsBigIcons">
+	<p>HMListTagsBigIcons</p>
+	<table class="table table-bordered table-striped">
+		<caption>Llista de categories</caption>
+		<thead>
+			<tr>
+				<th>Icon</th>
+				<th>Tag</th>
+				<th>Translation es</th>
+				<th>Translation ca</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-wrench icon-4x"></i> wrench</a></td>
+				<td>Work</td>
+				<td>Trabajo</td>
+				<td>Feina</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-briefcase icon-4x"></i> briefcase</a></td>
+				<td>Finances</td>
+				<td>Finanzas</td>
+				<td>Finances</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-money icon-4x"></i> money</a></td>
+				<td>Money</td>
+				<td>Dinero</td>
+				<td>Diners</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-beaker icon-4x"></i> beaker</a></td>
+				<td rowspan="2">Research</td>
+				<td rowspan="2">Investigación</td>
+				<td rowspan="2">Recerca</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-lightbulb icon-4x"></i> lightbulb</a></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-globe icon-4x"></i> globe</a></td>
+				<td>Exploration</td>
+				<td>Exploración</td>
+				<td>Exploració</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-group icon-4x"></i> group</a></td>
+				<td>Family</td>
+				<td>Familia</td>
+				<td>Família</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-user icon-4x"></i> user</a></td>
+				<td>Friends</td>
+				<td>Amigos</td>
+				<td>Amics</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-comments icon-4x"></i> comments</a></td>
+				<td>Social Relations</td>
+				<td>Relaciones Sociales</td>
+				<td>Relacions Socials</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-heart icon-4x"></i> heart</a></td>
+				<td>Close Relationships</td>
+				<td>Relaciones Íntimas</td>
+				<td>Relacions Íntimes</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-stethoscope icon-4x"></i> stethoscope</a></td>
+				<td rowspan="2">Health</td>
+				<td rowspan="2">Salud</td>
+				<td rowspan="2">Salut</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-leaf icon-4x"></i> leaf</a></td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-dashboard icon-4x"></i> dashboard</a></td>
+				<td>Sport</td>
+				<td>Deporte</td>
+				<td>Esport</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-bolt icon-4x"></i> bolt</a></td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-resize-small icon-4x"></i> resize-small</a></td>
+				<td>Mind</td>
+				<td>Mente</td>
+				<td>Ment</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-bullseye icon-4x"></i> bullseye</a></td>
+				<td>Center</td>
+				<td>Centro</td>
+				<td>Centre</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-home icon-4x"></i> home</a></td>
+				<td>Home</td>
+				<td>Casa</td>
+				<td>Llar</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-beer icon-4x"></i> beer</a></td>
+				<td rowspan="2">Entertainment</td>
+				<td rowspan="2">Ocio</td>
+				<td rowspan="2">Lleure</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-ticket icon-4x"></i> ticket</a></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-gamepad icon-4x"></i> gamepad</a></td>
+				<td>Hobbie</td>
+				<td>Aficiones</td>
+				<td>Aficions</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-resize-full icon-4x"></i> resize-full</a></td>
+				<td>Altruism</td>
+				<td>Altruismo</td>
+				<td>Altruisme</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-link icon-4x"></i> link</a></td>
+				<td>Duty</td>
+				<td>Deber</td>
+				<td>Deure</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td rowspan="2"><a class="btn btn-large"><i class="icon-glass icon-4x"></i> glass</a></td>
+				<td>Pleasure</td>
+				<td>Placer</td>
+				<td>Plaer</td>
+			</tr>
+			<tr>
+				<td>Vice</td>
+				<td>Vicio</td>
+				<td>Vici</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="row show-grid">
+		<div class="span12">Llista de categories</div>
+	</div>
+	<div class="row show-grid">
+		<div class="span12">
+			<div class="row">
+				<div class="span4">
+					<a class="btn btn-large"><i class="icon-wrench icon-4x"></i> wrench</a>
+					<a class="btn btn-large"><i class="icon-briefcase icon-4x"></i> briefcase</a>
+					<a class="btn btn-large"><i class="icon-money icon-4x"></i> money</a>
+				</div>
+				<div class="span8">
+					<div class="span2">Work</div>
+					<div class="offset1 span2">Trabajo</div>
+					<div class="span2">Feina</div>
+				</div>
+				<div class="span8">
+					<div class="span2">Finances</div>
+					<div class="offset1 span2">Finanzas</div>
+					<div class="span2">Finances</div>
+				</div>
+				<div class="span8">
+					<div class="span2">Money</div>
+					<div class="offset1 span2">Dinero</div>
+					<div class="span2">Diners</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row show-grid">
+		<div class="span12">
+			<div class="row">
+				<div class="span4"><a class="btn btn-large"><i class="icon-group icon-4x"></i> group</a></div>
+				<div class="span8">
+					<div class="span2">Family</div>
+					<div class="offset1 span2">Familia</div>
+					<div class="span2">Família</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</script>
+<script type="text/x-handlebars" data-template-name="HMListTagsWindRose">
+<div id="HMListTagsWindRose">
+	<p>HMListTagsWindRose</p>
+	<img src="docs/HowManyHomeRosaDelsVents.png" />
+</div>
+</script>
+<script type="text/x-handlebars" data-template-name="HMListTagsUsers">
+<div id="HMListTagsUsers">
+	<p>HMListTagsUsers</p>
+</div>
+</script>
+<script type="text/x-handlebars" data-template-name="HMListTagsHistory">
+<div id="HMListTagsHistory">
+	<p>HMListTagsHistory</p>
+	<img src="docs/HowManyHomeHistory.png" />
+</div>
+</script>
+
+<!-- HMList -->
+<!-- HM (View/Chooser) -->
+<!-- HMCRUD -->
+<!-- HMDone -->
+<!-- HMConfiguration -->
+<!-- HMWizard -->
+<!-- HMNotifications -->
+<!-- HMReport -->
+<!-- HMCredits -->
+
+
+
+
+<!-- HelloWorld -->
+<script type="text/x-handlebars" data-template-name="helloWorld">
+	<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="#">Project name</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li class="nav-header">Nav header</li>
+								<li><a href="#">Separated link</a></li>
+								<li><a href="#">One more separated link</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form pull-right">
+						<input class="span2" type="text" placeholder="Email">
+						<input class="span2" type="password" placeholder="Password">
+						<button type="submit" class="btn">Sign in</button>
+					</form>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<!-- Main hero unit for a primary marketing message or call to action -->
+		<div class="hero-unit">
+			<h1>{{App.hello}}</h1>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+			<p>
+				{{#linkTo 'login' class="btn btn-primary btn-large"}}Login{{/linkTo}}
+			</p>
+		</div>
+
+		<!-- Example row of columns -->
+		<div class="row">
+			<div class="span4">
+				<h2>Heading</h2>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+				<p><a class="btn" href="#">View details &raquo;</a></p>
+			</div>
+			<div class="span4">
+				<h2>Heading</h2>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+				<p><a class="btn" href="#">View details &raquo;</a></p>
+			</div>
+			<div class="span4">
+				<h2>Heading</h2>
+				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				<p><a class="btn" href="#">View details &raquo;</a></p>
+			</div>
+		</div>
+
+		<hr>
+
+		<footer>
+			<p>&copy; Company 2012</p>
+		</footer>
+
+	</div> <!-- /container -->
+</script>
+
+		<!-- ¿script tags prepend body close or in the head? -->
+		<script type="text/javascript">window.cdn = false;window.debug = true;window.minjs = !window.debug;</script>
+		
+		
+		<!-- @ToDo: yepnope 
+			http://net.tutsplus.com/tutorials/javascript-ajax/wrangle-async-tasks-with-jquery-promises/
+			http://net.tutsplus.com/tutorials/javascript-ajax/easy-script-loading-with-yepnope-js/
+			http://stackoverflow.com/questions/9469235/is-it-possible-to-load-a-handlebars-template-via-ajax
+		-->
+		
+		
+		<script>window.cdn && document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="lib/jquery-1.9.0.min.js"><\/script>')</script>
+		<!-- In libs: jquery-1.10.2.js & jquery-migrate-1.2.1.js -->
+		
+		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js">')</script>
+		<script>window.Handlebars || document.write('<script src="lib/handlebars-1.0.0-rc.4.js"><\/script>')</script>
+		<!-- In libs: handlebars-1.0.0 , handlebars-1.0.0.runtime.js & handlebars-1.0.0-rc.4.js -->
+		
+		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js">')</script>
+		<script>window._ || document.write('<script src="lib/underscore-1.5.1.js"><\/script>')</script>
+		<!-- In libs: min -->
+		
+		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js">')</script>
+		<script>window.Backbone || document.write('<script src="lib/backbone-1.0.0.js"><\/script>')</script>
+		<!-- In libs: min -->
+
+		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.0.0-rc.6/ember.min.js">')</script>
+		<script>window.Ember || document.write('<script src="lib/ember-1.0.0-rc.6.1.js"><\/script>')</script>
+		<!-- In libs: ember-1.0.0-rc.6.1.min.js & ember-1.0.0-rc.6.1.prod.js -->
+		
+		<!-- http://alignedleft.com/tutorials/d3/
+		<style>
+		div.bar {
+			display: inline-block;
+			width: 20px;
+			height: 75px;   /* We'll override this later */
+			background-color: teal;
+		}
+		</style>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		-->
+		
+		<!-- http://raphaeljs.com/reference.html
+		<script src="lib/raphael-2.1.1.min.js"></script>
+		<div id="canvas"></div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			paper = Raphael("canvas", 640, 480); //first param is the id of the paper
+			paper.circle(320, 240, 60).animate({fill: "#223fa3", stroke: "#000", "stroke-width": 80, "stroke-opacity": 0.5}, 2000);
+		});
+		</script>-->
+		
+		<!--Others JS in libs: jquery.mobile-1.1.0.js , bootstrap.min.js -->
+		
+		<script src="app/app.js"></script>
+		<script type="text/javascript">
+			function handleClientLoad() {
+				App.trigger('gapi:loaded');
+			}
+		</script>
+		<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+	</body>
+</html>

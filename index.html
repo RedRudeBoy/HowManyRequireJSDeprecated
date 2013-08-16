@@ -64,8 +64,8 @@
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="stylesheets/HTML5Boilerplate.css">
-		<link rel="stylesheet" href="stylesheets/bootstrap.routesfix.min.css">
-		<link rel="stylesheet" href="stylesheets/bootstrap-responsive.min.css">
+		<link rel="stylesheet" href="stylesheets/bootstrap-2.3.2.imgpathfix.min.css">
+		<link rel="stylesheet" href="stylesheets/bootstrap-responsive-2.3.2.min.css">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 		<!--<link rel="stylesheet" href="stylesheets/main.css">-->
 		<!--<link rel="stylesheet" href="stylesheets/jquery.mobile-1.1.0.min.css">-->
@@ -91,7 +91,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="brand" href="#">How Many</a>
+			<a class="brand">How Many</a>
 		</div>
 	</div>
 </div>
@@ -99,32 +99,100 @@
 
 <!-- Login -->
 <script type="text/x-handlebars" data-template-name="login">
+<div class="well well-large well-transparent">
+	<i class="icon-warning-sign icon-4x pull-left"></i>
+	This app is under heavy developement, still remains a lot of work to do, but...
+	<h4 class="inline">Wait for it! This is going to be:</h4>
+	<center>
+		<img src="http://data.whicdn.com/images/49707501/tumblr_mfhy5nxJJ21r5kmbwo1_500_large.jpg" class="img-rounded" style="max-height: 350px;" />
+	</center>
+</div>
+
 <div class="hero-unit">
-	<h1 id="info-panel"></h1>
-	<p id="info-panel-long"></p>
-	<!--Add a button for the user to click to initiate auth sequence -->
-	{{#view App.DoLoginView}}
-	<button id="authorize-button">Authorize</button>
-	{{/view}}
+	<h1>Hi! Welcome to How Many!</h1>
+	<p>How Many Days have been since I did... ~ How many days have passed since I did...</p>
+	<p>I wanna do more! I wanna do everything I expect!<br />But... I never remember the important things...</p>
+	<h2>Don't worry! HowMany is here to motivate you!!</h2>
+	<a id="tuEstahBien" href="http://youtu.be/8HIFBYSCQRQ" data-toggle="tooltip" data-placement="top" target="_blank">Chiquillo Tu Estah Bien? Los estas? Porque lo quiero saber</a>
+	<br />
+	<p>Is simple... I gonna suggest the important things for you!!<br />but... How?</p>
+	<h2>Showing the time since you did it since last time!!</h2>
+	<p>Visit more your grandma...</p>
+	<p>Go to gym more frequently...</p>
+	<p>Smoke less than the last week...</p>
+	<div class="well">
+		<h4>Important: This is a motivating webapp, use it well and be honest with yourself!</h4>
+	</div>
+	<a id="esBuenaPaTi" href="http://youtu.be/w_hVfwU0M8w" data-toggle="tooltip" data-placement="top" target="_blank">Es Buena Pa Ti, Pa Tu Cuerpo, Pa Tóh</a>
+</div>
+
+<div class="row" style="margin-bottom: 40px;">
+	<div class="span4">
+		{{#view App.DoLoginView}}
+			<!--Add a button for the user to click to initiate auth sequence -->
+			<button class="btn btn-block" id="authorize-button"><i class="icon-ticket"></i> Login with google (useless)</button>
+		{{/view}}
+	</div>
+	<div class="span4 text-center" id="info-panel">
+	</div>
+	<div class="span4">
+		{{#linkTo 'HMListTags.bigIcons' classNames="btn btn-block" id="authorize-button"}}<i class="icon-th-large"></i> See the templates{{/linkTo}}
+	</div>
 </div>
 </script>
 
 <!-- HMListTags -->
 <script type="text/x-handlebars" data-template-name="HMListTags">
 {{view App.HMListTagsToolbarView}}
-<div id="HMListTags">
+<div id="HMListTags" style="margin: 40px 0;">
 	{{outlet}}
 </div>
 </script>
 <script type="text/x-handlebars" data-template-name="HMListTagsToolbar">
-<div id="HMListTagsToolbar">
-	<span>HMListTagsToolbar</span>
-	<ul>
-		<li>{{#linkTo 'HMListTags.bigIcons'}}Big Icons{{/linkTo}}</li>
-		<li>{{#linkTo 'HMListTags.windRose'}}Wind Rose{{/linkTo}}</li>
-		<li>{{#linkTo 'HMListTags.users'}}Users{{/linkTo}}</li>
-		<li>{{#linkTo 'HMListTags.history'}}History{{/linkTo}}</li>
-	</ul>
+<style>
+.btn-toolbar-views .btn {
+	min-width: 15%;
+}
+.btn-toolbar-filters .btn {
+	min-width: 15%;
+}
+</style>
+<div id="HMListTagsToolbar" class="row">
+	<div class="span5" style="background-color: #eee">
+		<div class="row">
+			<div class="span5 text-center"><span><i class="icon-eye-open"></i> Views</span></div>
+		</div>
+		<div class="row">
+			<center>
+				<div class="span5 btn-group btn-toolbar-views">
+					{{#linkTo 'HMListTags.bigIcons' classNames="btn"}}<i class="icon-th-large"></i> Big Icons{{/linkTo}}
+					{{#linkTo 'HMListTags.windRose' classNames="btn"}}<i class="icon-compass"></i> Wind Rose{{/linkTo}}
+					{{#linkTo 'HMListTags.users' classNames="btn"}}<i class="icon-group"></i> Users{{/linkTo}}
+					{{#linkTo 'HMListTags.history' classNames="btn"}}<i class="icon-bar-chart"></i> History{{/linkTo}}
+				</div>
+			</center>
+		</div>
+	</div>
+	<div class="span2">
+		{{#linkTo 'HMListTags.bigIcons' classNames="btn btn-block"}}<i class="icon-plus"></i><br />New How Many{{/linkTo}}
+	</div>
+	<div class="span5" style="background-color: #eee">
+		<div class="row">
+			<div class="span5 text-center"><span><i class="icon-filter"></i> Filters</span></div>
+		</div>
+		<div class="row">
+			<center>
+				<div class="span5 btn-group btn-toolbar-filters">
+					<div class="input-prepend inline" style="margin-bottom:0px;">
+						<span class="add-on"><i class="icon-search"></i></span>
+						<input class="span2" type="text" placeholder="Search" style="-webkit-border-radius: 0;-moz-border-radius: 0;border-radius: 0;" />
+					</div>
+					<button class="btn"><i class="icon-exclamation"></i> Pending</button>
+					<button class="btn"><i class="icon-group"></i> Shared</button>
+				</div>
+			</center>
+		</div>
+	</div>
 </div>
 </script>
 <script type="text/x-handlebars" data-template-name="HMListTagsBigIcons">
@@ -159,12 +227,191 @@
   background-color: #999;
 }
 
-	td.space {
-		height: 40px;
-	}
-	</style>
+.space {
+	height: 40px;
+}
+
+.btn-large-height .dropdown-toggle {
+	min-height: 35px;
+}
+</style>
 <div id="HMListTagsBigIcons">
-	<p>HMListTagsBigIcons</p>
+<div class="row space"><div class="span12"><h1>Format icones</h1></div></div>
+	<div class="row">
+		<div class="span2"><a class="btn btn-block"><i class="icon-wrench icon-2x"></i> <br />Work<br />Finances<br />Money</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-beaker icon-2x"></i> <br />Research<br />Exploration</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-group icon-2x"></i> <br />Family</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-2x"></i> <br />Friends</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-comments icon-2x"></i> <br />Social Relations</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-heart icon-2x"></i> <br />Close Relationships<br />Couple</a></div>
+	</div><div class="row space"><div class="span12"></div></div><div class="row">
+		<div class="span2"><a class="btn btn-block"><i class="icon-stethoscope icon-2x"></i> <br />Health</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-dashboard icon-2x"></i> <br />Sport</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-book icon-2x"></i> Culture<br />Intelligence</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-compass icon-2x"></i> Center<br />Mind</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-home icon-2x"></i> Home</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-ticket icon-2x"></i> Entertainment<br />Hobbies</a></div>
+	</div><div class="row space"><div class="span12"></div></div><div class="row">
+		<div class="span2"><a class="btn btn-block"><i class="icon-resize-full icon-2x"></i> Altruism</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-bullhorn icon-2x"></i> Community</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-link icon-2x"></i> Duty</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-glass icon-2x"></i> Pleasure</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-beer icon-2x"></i> Vice</a></div>
+	</div>
+<div class="row space"><div class="span12"></div></div>
+<div class="row space"><div class="span12"></div></div>
+
+<div class="row space"><div class="span12"><h1>Format icones amb sinonims</h1></div></div>
+	<div class="row show-grid btn-large-height">
+		<div class="span3">
+			<div class="btn-toolbar">
+				<div class="btn-group">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-wrench icon-2x"></i>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><i class="icon-briefcase icon-2x"></i> briefcase</li>
+						<li><i class="icon-money icon-2x"></i> money</li>
+					</ul>
+				</div>
+				<div class="btn-group dropup">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						<span>Work</span>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>Finances</li>
+						<li>Money</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="btn-toolbar">
+				<div class="btn-group">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-wrench icon-2x"></i>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><i class="icon-briefcase icon-2x"></i> briefcase</li>
+						<li><i class="icon-money icon-2x"></i> money</li>
+					</ul>
+				</div>
+				<div class="btn-group dropup">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						Work
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>Finances</li>
+						<li>Money</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="btn-toolbar">
+				<div class="btn-group">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-wrench icon-2x"></i>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><i class="icon-briefcase icon-2x"></i> briefcase</li>
+						<li><i class="icon-money icon-2x"></i> money</li>
+					</ul>
+				</div>
+				<div class="btn-group dropup">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						Work
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>Finances</li>
+						<li>Money</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="btn-toolbar">
+				<div class="btn-group">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-wrench icon-2x"></i>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><i class="icon-briefcase icon-2x"></i> briefcase</li>
+						<li><i class="icon-money icon-2x"></i> money</li>
+					</ul>
+				</div>
+				<div class="btn-group dropup">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						Work
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>Finances</li>
+						<li>Money</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row show-grid btn-large-height">
+		<div class="span3">
+			<div class="btn-toolbar">
+				<div class="btn-group">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-wrench icon-2x"></i>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><i class="icon-briefcase icon-2x"></i> briefcase</li>
+						<li><i class="icon-money icon-2x"></i> money</li>
+					</ul>
+				</div>
+				<div class="btn-group dropup">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						Work
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>Finances</li>
+						<li>Money</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="btn-toolbar">
+				<div class="btn-group">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-wrench icon-2x"></i>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><i class="icon-briefcase icon-2x"></i> briefcase</li>
+						<li><i class="icon-money icon-2x"></i> money</li>
+					</ul>
+				</div>
+				<div class="btn-group dropup">
+					<a class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+						Work
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>Finances</li>
+						<li>Money</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div class="row space"><div class="span12"><h1>Taula sencera amb siònims</h1></div></div>
 	<table class="table table-bordered table-striped">
 		<caption>Llista de categories</caption>
 		<thead>
@@ -180,19 +427,19 @@
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-wrench icon-4x"></i> wrench</a></td>
+				<td><a class="btn btn-large"><i class="icon-wrench icon-2x"></i> wrench</a></td>
 				<td>Work</td>
 				<td>Trabajo</td>
 				<td>Feina</td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-briefcase icon-4x"></i> briefcase</a></td>
+				<td><a class="btn btn-large"><i class="icon-briefcase icon-2x"></i> briefcase</a></td>
 				<td>Finances</td>
 				<td>Finanzas</td>
 				<td>Finances</td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-money icon-4x"></i> money</a></td>
+				<td><a class="btn btn-large"><i class="icon-money icon-2x"></i> money</a></td>
 				<td>Money</td>
 				<td>Dinero</td>
 				<td>Diners</td>
@@ -201,16 +448,16 @@
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-beaker icon-4x"></i> beaker</a></td>
+				<td><a class="btn btn-large"><i class="icon-beaker icon-2x"></i> beaker</a></td>
 				<td rowspan="2">Research</td>
 				<td rowspan="2">Investigación</td>
 				<td rowspan="2">Recerca</td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-lightbulb icon-4x"></i> lightbulb</a></td>
+				<td><a class="btn btn-large"><i class="icon-lightbulb icon-2x"></i> lightbulb</a></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-globe icon-4x"></i> globe</a></td>
+				<td><a class="btn btn-large"><i class="icon-globe icon-2x"></i> globe</a></td>
 				<td>Exploration</td>
 				<td>Exploración</td>
 				<td>Exploració</td>
@@ -219,7 +466,7 @@
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-group icon-4x"></i> group</a></td>
+				<td><a class="btn btn-large"><i class="icon-group icon-2x"></i> group</a></td>
 				<td>Family</td>
 				<td>Familia</td>
 				<td>Família</td>
@@ -228,13 +475,13 @@
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-user icon-4x"></i> user</a></td>
+				<td><a class="btn btn-large"><i class="icon-user icon-2x"></i> user</a></td>
 				<td>Friends</td>
 				<td>Amigos</td>
 				<td>Amics</td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-comments icon-4x"></i> comments</a></td>
+				<td><a class="btn btn-large"><i class="icon-comments icon-2x"></i> comments</a></td>
 				<td>Social Relations</td>
 				<td>Relaciones Sociales</td>
 				<td>Relacions Socials</td>
@@ -243,7 +490,7 @@
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-heart icon-4x"></i> heart</a></td>
+				<td><a class="btn btn-large"><i class="icon-heart icon-2x"></i> heart</a></td>
 				<td>Close Relationships</td>
 				<td>Relaciones Íntimas</td>
 				<td>Relacions Íntimes</td>
@@ -252,37 +499,49 @@
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-stethoscope icon-4x"></i> stethoscope</a></td>
+				<td><a class="btn btn-large"><i class="icon-stethoscope icon-2x"></i> stethoscope</a></td>
 				<td rowspan="2">Health</td>
 				<td rowspan="2">Salud</td>
 				<td rowspan="2">Salut</td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-leaf icon-4x"></i> leaf</a></td>
+				<td><a class="btn btn-large"><i class="icon-leaf icon-2x"></i> leaf</a></td>
 			</tr>
 			<tr>
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-dashboard icon-4x"></i> dashboard</a></td>
-				<td>Sport</td>
-				<td>Deporte</td>
-				<td>Esport</td>
+				<td><a class="btn btn-large"><i class="icon-dashboard icon-2x"></i> dashboard</a></td>
+				<td rowspan="2">Sport</td>
+				<td rowspan="2">Deporte</td>
+				<td rowspan="2">Esport</td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-bolt icon-4x"></i> bolt</a></td>
+				<td><a class="btn btn-large"><i class="icon-bolt icon-2x"></i> bolt</a></td>
 			</tr>
 			<tr>
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-resize-small icon-4x"></i> resize-small</a></td>
+				<td><a class="btn btn-large"><i class="icon-resize-small icon-2x"></i> resize-small</a></td>
 				<td>Mind</td>
 				<td>Mente</td>
 				<td>Ment</td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-bullseye icon-4x"></i> bullseye</a></td>
+				<td><a class="btn btn-large"><i class="icon-book icon-2x"></i> book</a></td>
+				<td>Culture</td>
+				<td>Cultura</td>
+				<td>Cultura</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-bullseye icon-2x"></i> bullseye</a></td>
+				<td>Intelligence</td>
+				<td>Inteligencia</td>
+				<td>Intel·ligència</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-compass icon-2x"></i> compass</a></td>
 				<td>Center</td>
 				<td>Centro</td>
 				<td>Centre</td>
@@ -291,7 +550,7 @@
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-home icon-4x"></i> home</a></td>
+				<td><a class="btn btn-large"><i class="icon-home icon-2x"></i> home</a></td>
 				<td>Home</td>
 				<td>Casa</td>
 				<td>Llar</td>
@@ -300,17 +559,17 @@
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-beer icon-4x"></i> beer</a></td>
+				<td><a class="btn btn-large"><i class="icon-beer icon-2x"></i> beer</a></td>
 				<td rowspan="2">Entertainment</td>
 				<td rowspan="2">Ocio</td>
 				<td rowspan="2">Lleure</td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-ticket icon-4x"></i> ticket</a></td>
+				<td><a class="btn btn-large"><i class="icon-ticket icon-2x"></i> ticket</a></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-gamepad icon-4x"></i> gamepad</a></td>
-				<td>Hobbie</td>
+				<td><a class="btn btn-large"><i class="icon-gamepad icon-2x"></i> gamepad</a></td>
+				<td>Hobbies</td>
 				<td>Aficiones</td>
 				<td>Aficions</td>
 			</tr>
@@ -318,16 +577,22 @@
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-resize-full icon-4x"></i> resize-full</a></td>
+				<td><a class="btn btn-large"><i class="icon-resize-full icon-2x"></i> resize-full</a></td>
 				<td>Altruism</td>
 				<td>Altruismo</td>
 				<td>Altruisme</td>
 			</tr>
 			<tr>
+				<td><a class="btn btn-large"><i class="icon-bullhorn icon-2x"></i> bullhorn</a></td>
+				<td>Community</td>
+				<td>Altruismo</td>
+				<td>Aportar a la societat</td>
+			</tr>
+			<tr>
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td><a class="btn btn-large"><i class="icon-link icon-4x"></i> link</a></td>
+				<td><a class="btn btn-large"><i class="icon-link icon-2x"></i> link</a></td>
 				<td>Duty</td>
 				<td>Deber</td>
 				<td>Deure</td>
@@ -336,7 +601,7 @@
 				<td colspan="4" class="space"></td>
 			</tr>
 			<tr>
-				<td rowspan="2"><a class="btn btn-large"><i class="icon-glass icon-4x"></i> glass</a></td>
+				<td rowspan="2"><a class="btn btn-large"><i class="icon-glass icon-2x"></i> glass</a></td>
 				<td>Pleasure</td>
 				<td>Placer</td>
 				<td>Plaer</td>
@@ -348,6 +613,64 @@
 			</tr>
 		</tbody>
 	</table>
+
+<div class="row space"><div class="span12"><h1>Idea alternativa a les categories</h1></div></div>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Icon</th>
+				<th>Tag</th>
+				<th>Translation es</th>
+				<th>Translation ca</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-moon icon-2x"></i> moon</a></td>
+				<td>Rest</td>
+				<td>Descanso</td>
+				<td>Descans</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-bolt icon-2x"></i> bolt</a></td>
+				<td>Stress</td>
+				<td>Estrés</td>
+				<td>Estrès</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-smile icon-2x"></i> smile</a></td>
+				<td>Hapiness</td>
+				<td>Felicidad</td>
+				<td>Felicitat</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-frown icon-2x"></i> frown</a></td>
+				<td>Sadness</td>
+				<td>Tristeza</td>
+				<td>Tristesa</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="space"></td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-volume-up icon-2x"></i> volume-up</a></td>
+				<td>Outgoing</td>
+				<td>Extrovertido</td>
+				<td>Extrovertit</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-large"><i class="icon-volume-down icon-2x"></i> volume-down</a></td>
+				<td>Introvert</td>
+				<td>Introvertido</td>
+				<td>Introvertit</td>
+			</tr>
+		</tbody>
+	</table>
+
+<div class="row space"><div class="span12"><h1>Format alternatiu de la taula</h1></div></div>
 	<div class="row show-grid">
 		<div class="span12">Llista de categories</div>
 	</div>
@@ -355,9 +678,9 @@
 		<div class="span12">
 			<div class="row">
 				<div class="span4">
-					<a class="btn btn-large"><i class="icon-wrench icon-4x"></i> wrench</a>
-					<a class="btn btn-large"><i class="icon-briefcase icon-4x"></i> briefcase</a>
-					<a class="btn btn-large"><i class="icon-money icon-4x"></i> money</a>
+					<a class="btn btn-large"><i class="icon-wrench icon-2x"></i> wrench</a>
+					<a class="btn btn-large"><i class="icon-briefcase icon-2x"></i> briefcase</a>
+					<a class="btn btn-large"><i class="icon-money icon-2x"></i> money</a>
 				</div>
 				<div class="span8">
 					<div class="span2">Work</div>
@@ -380,7 +703,7 @@
 	<div class="row show-grid">
 		<div class="span12">
 			<div class="row">
-				<div class="span4"><a class="btn btn-large"><i class="icon-group icon-4x"></i> group</a></div>
+				<div class="span4"><a class="btn btn-large"><i class="icon-group icon-2x"></i> group</a></div>
 				<div class="span8">
 					<div class="span2">Family</div>
 					<div class="offset1 span2">Familia</div>
@@ -390,22 +713,53 @@
 		</div>
 	</div>
 </div>
+<div class="row space"><div class="span12"><h1><a href="http://fortawesome.github.io/Font-Awesome/icons/" target"_blank">Tots els icones i molts més són d'aquí</a></h1></div></div>
 </script>
 <script type="text/x-handlebars" data-template-name="HMListTagsWindRose">
-<div id="HMListTagsWindRose">
-	<p>HMListTagsWindRose</p>
-	<img src="docs/HowManyHomeRosaDelsVents.png" />
+<div id="HMListTagsWindRose" style="margin-top: 50px;">
+	<div class="row">
+		<center class="span12">
+			<img src="docs/HowManyHomeRosaDelsVents.png" />
+		</center>
+	</div>
 </div>
 </script>
 <script type="text/x-handlebars" data-template-name="HMListTagsUsers">
+<style>
+div.space {
+	min-height: 40px;
+}
+</style>
 <div id="HMListTagsUsers">
-	<p>HMListTagsUsers</p>
+	<div class="row">
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Gala</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Gina</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Sigrid</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Ferran</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />TicTac</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Guille</a></div>
+	</div><div class="row space"><div class="span12"></div></div><div class="row">
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Jaume</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Dan</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Marcel</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Laia</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Jan</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Lenin</a></div>
+	</div><div class="row space"><div class="span12"></div></div><div class="row">
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Aina</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Lluisa</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Manel</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Josep</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Teresa</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-user icon-3x"></i><br />Nil</a></div>
+	</div>
 </div>
 </script>
 <script type="text/x-handlebars" data-template-name="HMListTagsHistory">
-<div id="HMListTagsHistory">
-	<p>HMListTagsHistory</p>
-	<img src="docs/HowManyHomeHistory.png" />
+<div id="HMListTagsHistory" class="row">
+	<center class="span12">
+		<img src="docs/HowManyHomeHistory.png" />
+	</center>
 </div>
 </script>
 
@@ -433,22 +787,22 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="#">Project name</a>
+				<a class="brand">Project name</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
+						<li class="active"><a>Home</a></li>
 						<li><a href="#about">About</a></li>
 						<li><a href="#contact">Contact</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+							<a class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
+								<li><a>Action</a></li>
+								<li><a>Another action</a></li>
+								<li><a>Something else here</a></li>
 								<li class="divider"></li>
 								<li class="nav-header">Nav header</li>
-								<li><a href="#">Separated link</a></li>
-								<li><a href="#">One more separated link</a></li>
+								<li><a>Separated link</a></li>
+								<li><a>One more separated link</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -478,17 +832,17 @@
 			<div class="span4">
 				<h2>Heading</h2>
 				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-				<p><a class="btn" href="#">View details &raquo;</a></p>
+				<p><a class="btn">View details &raquo;</a></p>
 			</div>
 			<div class="span4">
 				<h2>Heading</h2>
 				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-				<p><a class="btn" href="#">View details &raquo;</a></p>
+				<p><a class="btn">View details &raquo;</a></p>
 			</div>
 			<div class="span4">
 				<h2>Heading</h2>
 				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-				<p><a class="btn" href="#">View details &raquo;</a></p>
+				<p><a class="btn">View details &raquo;</a></p>
 			</div>
 		</div>
 
@@ -528,6 +882,10 @@
 		<script>window.Backbone || document.write('<script src="lib/backbone-1.0.0.js"><\/script>')</script>
 		<!-- In libs: min -->
 
+		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js">')</script>
+		<script>window.$.fn.modal || document.write('<script src="lib/bootstrap-2.3.2.js"><\/script>')</script>
+		
+		
 		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.0.0-rc.6/ember.min.js">')</script>
 		<script>window.Ember || document.write('<script src="lib/ember-1.0.0-rc.6.1.js"><\/script>')</script>
 		<!-- In libs: ember-1.0.0-rc.6.1.min.js & ember-1.0.0-rc.6.1.prod.js -->

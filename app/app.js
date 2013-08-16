@@ -60,8 +60,8 @@ App.IndexRoute = Ember.Route.extend({
 App.LoginRoute = Ember.Route.extend({
 	setupController: function(controller, model) {
 		console.log('setupController LoginRoute');
-		console.log(controller);
-		console.log(model);
+//		console.log(controller);
+//		console.log(model);
 	}
 });
 
@@ -73,6 +73,13 @@ App.DoLoginView = Ember.View.extend({
 //	click: handleAuthClick
 	click: function() {
 		App.gapi.authorize(false);
+	},
+	didInsertElement: function() {
+		Ember.run.scheduleOnce('afterRender', this, 'viewRendered');
+	},
+	viewRendered: function() {
+		$('#tuEstahBien').tooltip({'html': true,'title':'<img src="http://stream1.gifsoup.com/view1/4802687/chiquillo-tu-estah-bien-o.gif" />'});
+		$('#esBuenaPaTi').tooltip({'html': true,'title':'<img src="http://stream1.gifsoup.com/view2/4802699/es-buena-pa-ti-pa-tu-cuerpo-pa-t%C3%B3h-o.gif" />'});
 	}
 });
 
@@ -194,9 +201,11 @@ App.Utils.GAPI = App.Util.extend({
 		if (authResult && !authResult.error) {
 			App.gapi.isAuthorized = true;
 			App.trigger('gapi:authok',authResult);
+			$("#info-panel").text('Login OK!');
 		} else {
 			App.gapi.isAuthorized = false;
 			App.trigger('gapi:authko',authResult);
+			$("#info-panel").text('Login KO...');
 		}
 	},
 	//load

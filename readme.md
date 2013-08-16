@@ -1,5 +1,5 @@
 # How Many Days #
-How Many Days have been since... ~ How many days have passed since...
+How Many Days have been since I did... ~ How many days have passed since I did...
 
 ## The Application ##
 A la recerca de possibles necessitats,

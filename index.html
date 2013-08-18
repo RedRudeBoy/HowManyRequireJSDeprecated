@@ -67,8 +67,14 @@
 		<link rel="stylesheet" href="stylesheets/bootstrap-2.3.2.imgpathfix.min.css">
 		<link rel="stylesheet" href="stylesheets/bootstrap-responsive-2.3.2.min.css">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-		<!--<link rel="stylesheet" href="stylesheets/main.css">-->
+		<!--
+		<link rel="stylesheet" href="stylesheets/jquery.mobile.listview.structure.min.css">
+		<link rel="stylesheet" href="stylesheets/jquery.mobile.listview.theme.min.css">
+		<link rel="stylesheet" href="//code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		-->
+		<link rel="stylesheet" href="//code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css">
 		<!--<link rel="stylesheet" href="stylesheets/jquery.mobile-1.1.0.min.css">-->
+		<!--<link rel="stylesheet" href="stylesheets/main.css">-->
 
 		<!-- Google Fonts 
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
@@ -91,7 +97,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="brand">How Many</a>
+			{{#linkTo 'HMListTags.default' classNames="brand"}}How Many{{/linkTo}}
 		</div>
 	</div>
 </div>
@@ -154,13 +160,13 @@
 	min-width: 15%;
 }
 .btn-toolbar-filters .btn {
-	min-width: 15%;
+	min-width: 10%;
 }
 </style>
 <div id="HMListTagsToolbar" class="row">
 	<div class="span5" style="background-color: #eee">
 		<div class="row">
-			<div class="span5 text-center"><span><i class="icon-eye-open"></i> Views</span></div>
+			<div class="span5 text-center"><span><i class="icon-eye-open"></i> Categories</span></div>
 		</div>
 		<div class="row">
 			<center>
@@ -187,8 +193,10 @@
 						<span class="add-on"><i class="icon-search"></i></span>
 						<input class="span2" type="text" placeholder="Search" style="-webkit-border-radius: 0;-moz-border-radius: 0;border-radius: 0;" />
 					</div>
-					<button class="btn"><i class="icon-exclamation"></i> Pending</button>
-					<button class="btn"><i class="icon-group"></i> Shared</button>
+					<!-- exclamation on click check-empty -->
+					<button class="btn"><i class="icon-check"></i> Pending</button>
+					<button class="btn"><i class="icon-share"></i> Shared</button>
+					{{#linkTo 'HMList' classNames="btn"}}<i class="icon-unchecked"></i> All{{/linkTo}}
 				</div>
 			</center>
 		</div>
@@ -247,21 +255,21 @@
 	</div><div class="row space"><div class="span12"></div></div><div class="row">
 		<div class="span2"><a class="btn btn-block"><i class="icon-stethoscope icon-2x"></i> <br />Health</a></div>
 		<div class="span2"><a class="btn btn-block"><i class="icon-dashboard icon-2x"></i> <br />Sport</a></div>
-		<div class="span2"><a class="btn btn-block"><i class="icon-book icon-2x"></i> Culture<br />Intelligence</a></div>
-		<div class="span2"><a class="btn btn-block"><i class="icon-compass icon-2x"></i> Center<br />Mind</a></div>
-		<div class="span2"><a class="btn btn-block"><i class="icon-home icon-2x"></i> Home</a></div>
-		<div class="span2"><a class="btn btn-block"><i class="icon-ticket icon-2x"></i> Entertainment<br />Hobbies</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-book icon-2x"></i> <br />Culture<br />Intelligence</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-compass icon-2x"></i> <br />Center<br />Mind</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-home icon-2x"></i> <br />Home</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-ticket icon-2x"></i> <br />Entertainment<br />Hobbies</a></div>
 	</div><div class="row space"><div class="span12"></div></div><div class="row">
-		<div class="span2"><a class="btn btn-block"><i class="icon-resize-full icon-2x"></i> Altruism</a></div>
-		<div class="span2"><a class="btn btn-block"><i class="icon-bullhorn icon-2x"></i> Community</a></div>
-		<div class="span2"><a class="btn btn-block"><i class="icon-link icon-2x"></i> Duty</a></div>
-		<div class="span2"><a class="btn btn-block"><i class="icon-glass icon-2x"></i> Pleasure</a></div>
-		<div class="span2"><a class="btn btn-block"><i class="icon-beer icon-2x"></i> Vice</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-resize-full icon-2x"></i> <br />Altruism</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-bullhorn icon-2x"></i> <br />Community</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-link icon-2x"></i> <br />Duty</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-glass icon-2x"></i> <br />Pleasure</a></div>
+		<div class="span2"><a class="btn btn-block"><i class="icon-beer icon-2x"></i> <br />Vice</a></div>
 	</div>
 <div class="row space"><div class="span12"></div></div>
 <div class="row space"><div class="span12"></div></div>
 
-<div class="row space"><div class="span12"><h1>Format icones amb sinonims</h1></div></div>
+<div class="row space"><div class="span12"><h1>Format icones amb sinònims</h1></div></div>
 	<div class="row show-grid btn-large-height">
 		<div class="span3">
 			<div class="btn-toolbar">
@@ -411,7 +419,7 @@
 		</div>
 	</div>
 
-<div class="row space"><div class="span12"><h1>Taula sencera amb siònims</h1></div></div>
+<div class="row space"><div class="span12"><h1>Taula sencera amb sinònims</h1></div></div>
 	<table class="table table-bordered table-striped">
 		<caption>Llista de categories</caption>
 		<thead>
@@ -758,14 +766,112 @@ div.space {
 <script type="text/x-handlebars" data-template-name="HMListTagsHistory">
 <div id="HMListTagsHistory" class="row">
 	<center class="span12">
-		<img src="docs/HowManyHomeHistory.png" />
+		{{#linkTo 'HMList'}}<img src="docs/HowManyHomeHistory.png" />{{/linkTo}}
 	</center>
 </div>
 </script>
 
 <!-- HMList -->
+<script type="text/x-handlebars" data-template-name="HMList">
+{{view App.HMListTagsToolbarView}}
+<div id="HMListTags" style="margin: 40px 0;">
+	<div id="HMList" class="row">
+		<center class="span12">
+			<ul data-role="listview" data-split-icon="gear" data-split-theme="d" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+				<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-alt ui-li-has-thumb ui-first-child ui-btn-up-c">
+					<div class="ui-btn-inner ui-li ui-li-has-alt"><div class="ui-btn-text"><a href="#HMView" class="ui-link-inherit">
+						<img src="images/uploads/Familia.png" class="ui-li-thumb">
+						<h2 class="ui-li-heading" style="line-height:20px;">Visitar l'àvia</h2>
+						<p class="ui-li-desc">Aprendràs molt!</p>
+					</a></div></div>
+					<a href="#HMCRUD" data-rel="popup" data-position-to="window" data-transition="pop" title="Purchase album" class="ui-li-link-alt ui-btn ui-btn-icon-notext ui-btn-up-c" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="false" data-iconpos="notext" data-theme="c" aria-haspopup="true" aria-owns="purchase" aria-expanded="false"><span class="ui-btn-inner"><span class="ui-btn-text"></span><span data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="gear" data-iconpos="notext" data-theme="d" title="" class="ui-btn ui-btn-up-d ui-shadow ui-btn-corner-all ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text"></span><span class="ui-icon ui-icon-gear ui-icon-shadow">&nbsp;</span></span></span></span></a>
+				</li>
+				<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-alt ui-li-has-thumb ui-first-child ui-btn-up-c">
+					<div class="ui-btn-inner ui-li ui-li-has-alt"><div class="ui-btn-text"><a href="#HMView" class="ui-link-inherit">
+						<img src="images/uploads/Gimnas.png" class="ui-li-thumb">
+						<h2 class="ui-li-heading" style="line-height:20px;">Anar al gimnàs</h2>
+						<p class="ui-li-desc">Salud i llarga vida!</p>
+					</a></div></div>
+					<a href="#HMCRUD" data-rel="popup" data-position-to="window" data-transition="pop" title="Purchase album" class="ui-li-link-alt ui-btn ui-btn-icon-notext ui-btn-up-c" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="false" data-iconpos="notext" data-theme="c" aria-haspopup="true" aria-owns="purchase" aria-expanded="false"><span class="ui-btn-inner"><span class="ui-btn-text"></span><span data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="gear" data-iconpos="notext" data-theme="d" title="" class="ui-btn ui-btn-up-d ui-shadow ui-btn-corner-all ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text"></span><span class="ui-icon ui-icon-gear ui-icon-shadow">&nbsp;</span></span></span></span></a>
+				</li>
+				<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-alt ui-li-has-thumb ui-first-child ui-btn-up-c">
+					<div class="ui-btn-inner ui-li ui-li-has-alt"><div class="ui-btn-text"><a href="#HMView" class="ui-link-inherit">
+						<img src="images/uploads/JordiAlienigena.png" class="ui-li-thumb">
+						<h2 class="ui-li-heading" style="line-height:20px;">Quedar amb els col·legues</h2>
+						<p class="ui-li-desc">Yeah men!</p>
+					</a></div></div>
+					<a href="#HMCRUD" data-rel="popup" data-position-to="window" data-transition="pop" title="Purchase album" class="ui-li-link-alt ui-btn ui-btn-icon-notext ui-btn-up-c" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="false" data-iconpos="notext" data-theme="c" aria-haspopup="true" aria-owns="purchase" aria-expanded="false"><span class="ui-btn-inner"><span class="ui-btn-text"></span><span data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="gear" data-iconpos="notext" data-theme="d" title="" class="ui-btn ui-btn-up-d ui-shadow ui-btn-corner-all ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text"></span><span class="ui-icon ui-icon-gear ui-icon-shadow">&nbsp;</span></span></span></span></a>
+				</li>
+			</ul>
+			<!--
+			<ul data-role="listview" data-inset="true" data-split-icon="gear">
+				<li><a href="">
+					<img src="images/uploads/Familia.png" />
+					<h3>Visitar l'àvia</h3>
+					<p>Aprendràs molt!</p>
+					<a href=""></a>
+				</a></li>
+			</ul>
+			-->
+		</center>
+	</div>
+</div>
+</script>
+
 <!-- HM (View/Chooser) -->
+<script type="text/x-handlebars" data-template-name="HMView">
+<div style="margin: 40px 0;"></div>
+<div class="row">
+	<h3 class="span6 offset3">Ja has fet:</h3>
+	<h1 class="span6 offset3">Visitar l'àvia?</h1>
+</div>
+<div class="row" style="margin-top: 10px;">
+	<div class="well span6 offset3">
+		<div class="row">
+			<a class="span6 btn btn-block"><i class="icon-ok icon-3x"></i><br />I've done it!</a>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="span6">
+				<legend>Notes</legend>
+				<textarea  class="span6" rows="3" placeholder="Notes"></textarea>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="span6">
+				<legend>When?</legend>
+				<div class="row">
+					{{#view App.HMViewNowBtnView}}
+					<a class="span2 btn btn-block active">Now</a>
+					{{/view}}
+					<div class="span2 offset1" id="HMViewWhen" style="display: none;">
+						<input type="date">
+						<small>(default: now)</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="display: none; margin-top: 10px;" id="HMViewDuration">
+			<div class="span6">
+				<legend>Duration</legend>
+				<input type="time">
+				<small>(default: 1 hour - Only visible if when is defined)</small>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row" style="margin-top: 50px;">
+	<a class="span6 offset3 btn btn-block"><i class="icon-calendar-empty icon-2x"></i><br />I wanna do it!<br />Let's find a date!</a>
+</div>
+<div class="row" style="margin-top: 50px;">
+	{{#linkTo 'HMCRUD' class="span6 offset3 btn btn-block"}}<i class="icon-gear"></i> Edit{{/linkTo}}
+</div>
+</script>
+
 <!-- HMCRUD -->
+<script type="text/x-handlebars" data-template-name="HMCRUD">
+<div style="margin: 40px 0;"></div>
+<h1>HM editor</h1>
+</script>
 <!-- HMDone -->
 <!-- HMConfiguration -->
 <!-- HMWizard -->
@@ -854,42 +960,60 @@ div.space {
 
 	</div> <!-- /container -->
 </script>
-
+	<!-- Conf -->
 		<!-- ¿script tags prepend body close or in the head? -->
 		<script type="text/javascript">window.cdn = false;window.debug = true;window.minjs = !window.debug;</script>
 		
 		
-		<!-- @ToDo: yepnope 
+	<!-- @ToDo: yepnope loader
 			http://net.tutsplus.com/tutorials/javascript-ajax/wrangle-async-tasks-with-jquery-promises/
 			http://net.tutsplus.com/tutorials/javascript-ajax/easy-script-loading-with-yepnope-js/
 			http://stackoverflow.com/questions/9469235/is-it-possible-to-load-a-handlebars-template-via-ajax
 		-->
-		
-		
-		<script>window.cdn && document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"><\/script>')</script>
-		<script>window.jQuery || document.write('<script src="lib/jquery-1.9.0.min.js"><\/script>')</script>
-		<!-- In libs: jquery-1.10.2.js & jquery-migrate-1.2.1.js -->
-		
-		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js">')</script>
-		<script>window.Handlebars || document.write('<script src="lib/handlebars-1.0.0-rc.4.js"><\/script>')</script>
-		<!-- In libs: handlebars-1.0.0 , handlebars-1.0.0.runtime.js & handlebars-1.0.0-rc.4.js -->
-		
-		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js">')</script>
-		<script>window._ || document.write('<script src="lib/underscore-1.5.1.js"><\/script>')</script>
-		<!-- In libs: min -->
-		
-		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js">')</script>
-		<script>window.Backbone || document.write('<script src="lib/backbone-1.0.0.js"><\/script>')</script>
+
+	<!-- jQuery - jQueryMobile & Bootstrap -->
+		<!-- jQuery 1.10.2 -->
+		<script>window.jQuery || document.write('<script src="lib/jquery-1.10.2.js"><\/script>');</script>
+<!--		<script>window.$.browser || document.write('<script src="lib/jquery-migrate-1.2.1.js"><\/script>');</script>
+		<!-- jQuery 1.9.0 -->
+<!--		<script>window.cdn && document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"><\/script>');</script>
+		<script>window.jQuery || document.write('<script src="lib/jquery-1.9.0.min.js"><\/script>');</script>-->
+		<!-- jQuery 1.7.2 -->
+<!--		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+		<!-- jQueryMobile  1.3.2 -->
+<!--		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.3.2/jquery.mobile.min.js"><\/script>')</script>
+		<!-- //code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js -->
+<!--		<script>window.$.mobile || document.write('<script src="lib/jquery.mobile-1.3.2.min.js"><\/script>')</script>
+		<!-- In libs: jquery.mobile.listview-1.3.2.min -->
+		<!-- jQueryMobile  1.2.1 -->
+<!--		<script>window.cdn && document.write('<script src="//http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"><\/script>')</script>-->
+<!--		<script src="//code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>-->
+		<!-- jQueryMobile  1.1.1 -->
+<!--		<script src="//code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>-->
+
+		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"><\/script>');</script>
+		<script>window.$.fn.modal || document.write('<script src="lib/bootstrap-2.3.2.js"><\/script>');</script>
+
+	<!-- underscore & backbone -->
+		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"><\/script>');</script>
+		<script>window._ || document.write('<script src="lib/underscore-1.5.1.js"><\/script>');</script>
 		<!-- In libs: min -->
 
-		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js">')</script>
-		<script>window.$.fn.modal || document.write('<script src="lib/bootstrap-2.3.2.js"><\/script>')</script>
-		
-		
-		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.0.0-rc.6/ember.min.js">')</script>
-		<script>window.Ember || document.write('<script src="lib/ember-1.0.0-rc.6.1.js"><\/script>')</script>
+		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"><\/script>');</script>
+		<script>window.Backbone || document.write('<script src="lib/backbone-1.0.0.js"><\/script>');</script>
+		<!-- In libs: min -->
+	
+	<!-- ember -->
+		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"><\/script>');</script>
+		<script>window.Handlebars || document.write('<script src="lib/handlebars-1.0.0-rc.4.js"><\/script>');</script>
+		<!-- In libs: handlebars-1.0.0 , handlebars-1.0.0.runtime.js & handlebars-1.0.0-rc.4.js -->
+
+		<script>window.cdn && document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.0.0-rc.6/ember.min.js"><\/script>');</script>
+		<script>window.Ember || document.write('<script src="lib/ember-1.0.0-rc.6.1.js"><\/script>');</script>
 		<!-- In libs: ember-1.0.0-rc.6.1.min.js & ember-1.0.0-rc.6.1.prod.js -->
 		
+	<!-- JAVASCRIPT SVG Helpers -->
 		<!-- http://alignedleft.com/tutorials/d3/
 		<style>
 		div.bar {
@@ -912,14 +1036,14 @@ div.space {
 		});
 		</script>-->
 		
-		<!--Others JS in libs: jquery.mobile-1.1.0.js , bootstrap.min.js -->
-		
 		<script src="app/app.js"></script>
 		<script type="text/javascript">
-			function handleClientLoad() {
+//			function handleClientLoad() {
 				App.trigger('gapi:loaded');
-			}
+//			}
 		</script>
+	<!-- Google API
 		<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+		  -->
 	</body>
 </html>

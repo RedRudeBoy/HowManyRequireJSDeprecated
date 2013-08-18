@@ -18,8 +18,10 @@ App.Router.map(function() {
 		this.route('windRose');
 		this.route('users');
 		this.route('history');
-		
 	});
+	this.route('HMList');
+	this.route('HMView');
+	this.route('HMCRUD');
 	this.route('login');
 });
 
@@ -28,7 +30,7 @@ App.IndexRoute = Ember.Route.extend({
 		App.log('IndexRoute redirect, authorized?');
 		if(!Ember.isNone(App.gapi) && !Ember.isNone(App.gapi.isAuthorized) && App.gapi.isAuthorized) {
 			App.log(App.gapi.isAuthorized);
-			this.transitionTo('HMListTags');
+			this.transitionTo('HMList');
 		} else {
 			App.log('goTo login');
 			this.transitionTo('login');
@@ -84,6 +86,7 @@ App.DoLoginView = Ember.View.extend({
 });
 
 		//HMListTags
+//App.HMListTagsRoutes
 App.HMListTagsRoute = Ember.Route.extend({
 	activate: function() {
 		App.log('HMListTagsRoute activate');
@@ -92,7 +95,7 @@ App.HMListTagsRoute = Ember.Route.extend({
 App.HMListTagsDefaultRoute = Ember.Route.extend({
 	redirect: function() {
 		App.log('HMListTagsDefaultRoute redirect to BigIcons');
-		this.transitionTo('HMListTags.bigIcons');
+		this.transitionTo('HMList');
 	}
 });
 App.HMListTagsBigIconsRoute = Ember.Route.extend({
@@ -116,7 +119,7 @@ App.HMListTagsHistoryRoute = Ember.Route.extend({
 	}
 });
 
-//App.HMListTags
+//App.HMListTagsViews
 App.HMListTagsToolbarView = Ember.View.extend({
 	templateName: 'HMListTagsToolbar'
 });
@@ -131,6 +134,42 @@ App.HMListTagsUsersView = Ember.View.extend({
 });
 App.HMListTagsHistoryView = Ember.View.extend({
 	templateName: 'HMListTagsHistory'
+});
+
+		//HMList
+App.HMListRoute = Ember.Route.extend({
+	activate: function() {
+		App.log('HMListRoute activate');
+	}
+});
+App.HMListView = Ember.View.extend({
+	templateName: 'HMList'
+});
+
+		//HMView
+App.HMViewRoute = Ember.Route.extend({
+	activate: function() {
+		App.log('HMViewRoute activate');
+	}
+});
+App.HMViewView = Ember.View.extend({
+	templateName: 'HMView'
+});
+App.HMViewNowBtnView = Ember.View.extend({
+	click: function() {
+		$('#HMViewWhen,#HMViewDuration').toggle();
+		$("#"+this.elementId).children('.btn').toggleClass('active')
+	}
+});
+
+		//HMCRUD
+App.HMCRUDRoute = Ember.Route.extend({
+	activate: function() {
+		App.log('HMViewRoute activate');
+	}
+});
+App.HMCRUDView = Ember.View.extend({
+	templateName: 'HMCRUD'
 });
 
 //HelloWorld
@@ -362,6 +401,26 @@ App.on('gapi:authok', function() {
 		App.trigger('gapi:ready');
 	});
 });
+
+/**
+ * Code from:
+ * https://github.com/LuisSala/emberjs-jqm/blob/master/js/app.js
+$(document).bind('mobileinit', function() {
+	$.mobile.touchOverflowEnabled = true;
+});
+
+$(document).bind('pageinit', function() {
+	console.log('pageinit');
+//	var v = App.get('mainView');
+
+//	if (!v) {
+//		console.log('main not created');
+//		v = App.MainView.create();
+//		App.set('mainView', v);
+//		v.append();
+//	}
+});
+ */
 
 /**
  * Code from:

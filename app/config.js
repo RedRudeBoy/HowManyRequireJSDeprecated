@@ -1,13 +1,5 @@
-// Enter a client ID for a web application from the Google Developer Console.
-// The provided clientId will only work if the sample is run directly from
-// https://google-api-javascript-client.googlecode.com/hg/samples/authSample.html
-// In your Developer Console project, add a JavaScript origin that corresponds to the domain
-// where you will be running the script.
-var clientId = '837050751313';
-
-// Enter the API key from the Google Develoepr Console - to handle any unauthenticated
-// requests in the code.
-// The provided key works for this sample only when run from
-// https://google-api-javascript-client.googlecode.com/hg/samples/authSample.html
-// To use in your own application, replace this API key with your own.
-var apiKey = 'AIzaSyAdjHPT5Pb7Nu56WJ_nlrMGOAgUAtKjiPM';
+	clientId: '827915641106.apps.googleusercontent.com',//web application
+//	clientId: '827915641106-pv8v261cj864m79jtbsuv3civ1b81j5u.apps.googleusercontent.com', //Installed application
+//	apiKey: 'WN85kTXZ5Ads7TWiCsUfquJT', //client secret web app
+//	apiKey: 'NDzGalbOgz7VW5VIfkpxNOCI', //client secret installed app
+	apiKey2: 'AIzaSyDRJJspJ8iRBkR_z0hjHL53392XwnyVUmc', //Key for browser apps (with referers)

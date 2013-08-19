@@ -22,6 +22,7 @@ App.Router.map(function() {
 	this.route('HMList');
 	this.route('HMView');
 	this.route('HMCRUD');
+	this.route('HMDone');
 	this.route('login');
 });
 
@@ -158,7 +159,7 @@ App.HMViewView = Ember.View.extend({
 App.HMViewNowBtnView = Ember.View.extend({
 	click: function() {
 		$('#HMViewWhen,#HMViewDuration').toggle();
-		$("#"+this.elementId).children('.btn').toggleClass('active')
+		$("#"+this.elementId).children('.btn').toggleClass('active');
 	}
 });
 
@@ -172,6 +173,15 @@ App.HMCRUDView = Ember.View.extend({
 	templateName: 'HMCRUD'
 });
 
+		//HMDone
+App.HMDoneRoute = Ember.Route.extend({
+	activate: function() {
+		App.log('HMDoneRoute activate');
+	}
+});
+App.HMDoneView = Ember.View.extend({
+	templateName: 'HMDone'
+});
 //HelloWorld
 //App.hello = "Hello World (by ember!)";
 
@@ -205,11 +215,8 @@ App.Util = function(options) {
 App.Util.extend = Backbone.Model.extend;
 App.Utils.GAPI = App.Util.extend({
 	toString: function() {return 'GAPI'},
-	clientId: '827915641106.apps.googleusercontent.com',//web application
-//	clientId: '827915641106-pv8v261cj864m79jtbsuv3civ1b81j5u.apps.googleusercontent.com', //Installed application
-//	apiKey: 'WN85kTXZ5Ads7TWiCsUfquJT', //client secret web app
-//	apiKey: 'NDzGalbOgz7VW5VIfkpxNOCI', //client secret installed app
-	apiKey2: 'AIzaSyDRJJspJ8iRBkR_z0hjHL53392XwnyVUmc', //Key for browser apps (with referers)
+	clientId: '',
+	apiKey2: '',
 	scopes: [
 		'https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/calendar.readonly',
 		'https://www.googleapis.com/auth/tasks','https://www.googleapis.com/auth/tasks.readonly',

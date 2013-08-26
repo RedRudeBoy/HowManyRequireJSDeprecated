@@ -1,0 +1,187 @@
+<br /><br /><br />
+<div class="row alert">
+	<div class="span1 offset1">
+		<a class="btn btn-block btn-danger" data-toggle="modal" href="#removeHowManyModal" role="button"><i class="icon-trash"></i><br />Remove</a>
+	</div>
+	<div class="span3 offset1">
+		{{#linkTo 'HMList' class="btn btn-block btn-warning"}}<i class="icon-undo"></i><br />Cancel{{/linkTo}}
+	</div>
+	<div class="span4 offset1">
+		{{#linkTo 'HMList' class="btn btn-block btn-success"}}<i class="icon-save icon-2x"></i><br />Save{{/linkTo}}
+	</div>
+</div>
+<div id="removeHowManyModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="removeHowManyModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="removeHowManyModalLabel">Remove Visitar l'àvia</h3>
+	</div>
+	<div class="modal-body">
+		<p>Are you sure you want to remove Visitar l'àvia?</p>
+		<p>You can't undo this</p>
+	</div>
+	<div class="modal-footer">
+		{{! Error: hide modal previously
+		{#linkTo 'HMList' class="btn btn-block btn-danger"}<i class="icon-trash"></i> Remove it!{/linkTo}
+		}}
+		<a class="btn btn-danger btn-block" role="button">
+			<i class="icon-trash"></i> Remove it!
+		</a>
+	</div>
+</div>
+<br /><br />
+<div class="tabbable">
+	<ul class="nav nav-tabs" style="margin-bottom: 0px;">
+		<li class="active"><a href="#HMCRUDBasic" data-toggle="tab">Basic Info</a></li>
+		<li><a href="#HMCRUDTags" data-toggle="tab">Categories</a></li>
+		<li><a href="#HMCRUDUsers" data-toggle="tab">Users</a></li>
+		<li><a href="#HMCRUDPeriodicity" data-toggle="tab" style="background-color: lightgray;"><i class="icon-eye-close"></i> Periodicity + Alarms</a></li>
+	</ul>
+	<div class="tab-content" style="padding: 25px;border-left: 1px solid #ddd;border-right: 1px solid #ddd;border-bottom: 1px solid #ddd;">
+		<div class="tab-pane active" id="HMCRUDBasic">
+			<div class="media img-rounded" style="border: 1px outset black; height: 250px;">
+				<div class="pull-left" style="margin: 25px">
+					<img class="media-object img-rounded" src="images/uploads/Familia.png">
+				</div>
+				<div class="media-body" style="margin: 25px">
+					<h3 class="media-heading">Visitar l'àvia</h3>
+					<h5>Aprendràs molt!</h5>
+					<small>editable</small>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane" id="HMCRUDTags">
+			<div class="row-fluid">
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-wrench icon-2x"></i> <br />Work<br />Finances<br />Money</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-beaker icon-2x"></i> <br />Research<br />Exploration</a></div>
+				<div class="span2"><a class="btn btn-block active btn-success" data-toggle="button"><i class="icon-group icon-2x"></i> <br />Family</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-user icon-2x"></i> <br />Friends</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-comments icon-2x"></i> <br />Social Relations</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-heart icon-2x"></i> <br />Close Relationships<br />Couple</a></div>
+			</div>
+			<br /><br /><br />
+			<div class="row-fluid">
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-stethoscope icon-2x"></i> <br />Health</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-dashboard icon-2x"></i> <br />Sport</a></div>
+				<div class="span2"><a class="btn btn-block active btn-success" data-toggle="button"><i class="icon-book icon-2x"></i> <br />Culture<br />Intelligence</a></div>
+				<div class="span2"><a class="btn btn-block active btn-success" data-toggle="button"><i class="icon-compass icon-2x"></i> <br />Center<br />Mind</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-home icon-2x"></i> <br />Home</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-ticket icon-2x"></i> <br />Entertainment<br />Hobbies</a></div>
+			</div>
+			<br /><br /><br />
+			<div class="row-fluid">
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-resize-full icon-2x"></i> <br />Altruism</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-bullhorn icon-2x"></i> <br />Community</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-link icon-2x"></i> <br />Duty</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-glass icon-2x"></i> <br />Pleasure</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="button"><i class="icon-beer icon-2x"></i> <br />Vice</a></div>
+			</div>
+		</div>
+		<div class="tab-pane" id="HMCRUDUsers">
+			<div class="row">
+				<div class="span6 offset3">
+					<a class="btn btn-block"><i class="icon-share"></i><br />Share</a>
+				</div>
+			</div>
+			<br /><br />
+			<div class="row">
+				<div class="span2"><a class="btn btn-block" data-toggle="modal" href="#removeUserModal" role="button">
+					<span class="icon-stack icon-3x"><i class="icon-user icon-stack-base"></i><i class="icon-ban-circle text-error"></i></span>
+					<br />Mihoko
+				</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="modal" href="#removeUserModal" role="button">
+					<span class="icon-stack icon-3x"><i class="icon-user icon-stack-base"></i><i class="icon-ban-circle text-error"></i></span>
+					<br />Joana
+				</a></div>
+				<div class="span2"><a class="btn btn-block" data-toggle="modal" href="#removeUserModal" role="button">
+					<span class="icon-stack icon-3x"><i class="icon-user icon-stack-base"></i><i class="icon-ban-circle text-error"></i></span>
+					<br />Nil
+				</a></div>
+			</div>
+			<div id="removeUserModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="removeUserModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="removeUserModalLabel">Unshare</h3>
+				</div>
+				<div class="modal-body">
+					<p>Are you sure you want to unshare Visitar l'àvia with Mihoko?</p>
+				</div>
+				<div class="modal-footer">
+					<a class="btn btn-danger btn-block" role="button">
+						<span class="icon-stack icon-2x"><i class="icon-share"></i><i class="icon-ban-circle icon-stack-base"></i></span> Yep
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane" id="HMCRUDPeriodicity">
+			<div class="row-fluid">
+				<p class="span12">You can use a default difficulty:</p>
+			</div>
+			<div class="row-fluid">
+				<div class="span3 offset1">
+					<a class="btn btn-block"><i class="icon-star-empty"></i><br />Easy - Less times</a>
+				</div>
+				<div class="span3 offset1">
+					<a class="btn btn-block"><i class="icon-star-half-empty"></i><br />Medium</a>
+				</div>
+				<div class="span3 offset1">
+					<a class="btn btn-block"><i class="icon-star"></i><br />Difficult - More times</a>
+				</div>
+			</div>
+			<br /><br />
+			<div class="row-fluid">
+				<p class="span12">Or edit manually:</p>
+			</div>
+			<div class="row-fluid">
+				<div class="span12 alert alert-success">
+					<span>When you are </span><input type="number" value="3" min="1" max="60" size="2" /><span> </span>
+					<select style="width: 100px;"><option value="m">Minute(s)</option><option value="d" selected>Day(s)</option><option value="w">Week(s)</option><option value="m">Month(s)</option><option value="y">Year(s)</option></select>
+					<span> without doing it, you will receive </span>
+					<select style="width: 60px;"><option value="plus" selected>+</option><option value="minus">-</option>
+					<input type="number" min="0" max="100" size="3" value="30" /><span> points</span>
+					<button class="btn" data-toggle="button" style="margin-left: 20px"><i class="icon-envelope-alt"></i></button>
+					<button class="btn" data-toggle="button" style="margin-left: 5px"><i class="icon-bell"></i></button>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12 alert alert-info">
+					<span>When you are </span><input type="number" value="5" min="1" max="60" size="2" /><span> </span>
+					<select style="width: 100px;"><option value="m">Minute(s)</option><option value="d" selected>Day(s)</option><option value="w">Week(s)</option><option value="m">Month(s)</option><option value="y">Year(s)</option></select>
+					<span> without doing it, you will receive </span>
+					<select style="width: 60px;"><option value="plus" selected>+</option><option value="minus">-</option>
+					<input type="number" min="0" max="100" size="3" value="0" /><span> points</span>
+					<button class="btn" data-toggle="button" style="margin-left: 20px"><i class="icon-envelope-alt"></i></button>
+					<button class="btn" data-toggle="button" style="margin-left: 5px"><i class="icon-bell"></i></button>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12 alert">
+					<span>When you are </span><input type="number" value="1" min="1" max="60" size="2" /><span> </span>
+					<select style="width: 100px;"><option value="m">Minute(s)</option><option value="d" selected>Day(s)</option><option value="w" selected>Week(s)</option><option value="m">Month(s)</option><option value="y">Year(s)</option></select>
+					<span> without doing it, you will receive </span>
+					<select style="width: 60px;"><option value="plus">+</option><option value="minus" selected>-</option>
+					<input type="number" min="0" max="100" size="3" value="5" /><span> points</span>
+					<button class="btn" data-toggle="button" style="margin-left: 20px"><i class="icon-envelope-alt"></i></button>
+					<button class="btn" data-toggle="button" style="margin-left: 5px"><i class="icon-bell"></i></button>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12 alert alert-error">
+					<span>When you are </span><input type="number" value="1" min="1" max="60" size="2" /><span> </span>
+					<select style="width: 100px;"><option value="m">Minute(s)</option><option value="d">Day(s)</option><option value="w">Week(s)</option><option value="m" selected>Month(s)</option><option value="y">Year(s)</option></select>
+					<span> without doing it, you will receive </span>
+					<select style="width: 60px;"><option value="plus">+</option><option value="minus" selected>-</option>
+					<input type="number" min="0" max="100" size="3" value="20" /><span> points</span>
+					<button class="btn" data-toggle="button" style="margin-left: 20px"><i class="icon-envelope-alt"></i></button>
+					<button class="btn" data-toggle="button" style="margin-left: 5px"><i class="icon-bell"></i></button>
+				</div>
+			</div>
+			<br />
+			<div class="row-fluid">
+				<div class="span2 offset5">
+					<a class="btn btn-block"><i class="icon-plus"></i> Add new periodicity</a>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+</div>

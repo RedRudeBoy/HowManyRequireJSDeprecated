@@ -10,7 +10,7 @@ Quants dies fa que no visito l'àvia?
 Quants dies fa que no llegeixo?
 Quants mesos fa que no faig una escapada?
 
-### [Try It Here](http://www.cat/) ###
+### [Try It Here](http://www.jamaicaska.es/HowMany) ###
 
 ## My Goals ##
 1. Get started with a Node/Backbone application

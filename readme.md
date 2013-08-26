@@ -27,10 +27,18 @@ Quants mesos fa que no faig una escapada?
 ## In the roadmap ##
 1. [d3js](http://d3js.org/) - Library for manipulating documents based on data
 2. [Raphaël](http://raphaeljs.com/) - Library that should simplify your work with vector graphics on the web
-3. [iScroll](http://cubiq.org/) - Smooth scrolling for the web
-4. [StoicLoofah/chronoline.js](https://github.com/StoicLoofah/chronoline.js) - Library for making a chronology timeline out of events on a horizontal timescale
-5. [todc/todc-bootstrap](https://github.com/todc/todc-bootstrap) - Google-styled theme for Twitter Bootstrap
-6. [pfefferle/openwebicons](https://github.com/pfefferle/openwebicons) - Set of icons to show the support for the Open Web
+3. [Moment.js](http://momentjs.com/) - Library for parsing, validating, manipulating, and formatting dates
+4. [∞.js](http://airbnb.github.io/infinity/) -  speeds up scrolling through long lists and keeps your infinite feeds smooth and stable for your users
+5. [iScroll](http://cubiq.org/) - Smooth scrolling for the web
+6. [StoicLoofah/chronoline.js](https://github.com/StoicLoofah/chronoline.js) - Library for making a chronology timeline out of events on a horizontal timescale
+7. [todc/todc-bootstrap](https://github.com/todc/todc-bootstrap) - Google-styled theme for Twitter Bootstrap
+8. [pfefferle/openwebicons](https://github.com/pfefferle/openwebicons) - Set of icons to show the support for the Open Web
+9. [kurakin/node-vcal](https://github.com/kurakin/node-vcal) - Create and parse ics files
+10. [fuelUX](http://exacttarget.github.io/fuelux) - Additional lightweight JavaScript controls
+11. [Bootstrap Arrows](http://bootstrap-arrows.iarfhlaith.com/) - Include arrows at any angle
+12. [Messenger](http://github.hubspot.com/messenger/) - Alerts for the 21st century
+13. [emberjs-addons/ember-bootstrap](https://github.com/emberjs-addons/ember-bootstrap) - A set of UI elements styled using the Boostrap toolkit to use with Ember.js
+14. [Ember.I18n](https://github.com/jamesarosen/ember-i18n) - Internationalization for Ember
 
 ## Not used directly, but an important source of inspiration ##
 1. [Backbone](https://github.com/documentcloud/backbone) - MVC for browser

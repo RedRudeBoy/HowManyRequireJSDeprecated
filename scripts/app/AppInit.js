@@ -4,6 +4,8 @@ define([
 	"app/ApplicationController",
 	"app/router",
 	
+	"pages/HMNavbar/HMNavbarView",
+	
 	"pages/HMCRUD/HMCRUDView",
 	"pages/HMDone/HMDoneView",
 	"pages/HMList/HMListView",
@@ -14,6 +16,7 @@ define([
 	
 	"pages/HMListTags/HMListTagsView",
 	"pages/HMListTags/HMListTagsToolbarView",
+	
 	"pages/HMListTags/HMListTagsBigIconsView",
 	"pages/HMListTags/HMListTagsHistoryView",
 	"pages/HMListTags/HMListTagsUsersView",
@@ -23,16 +26,30 @@ define([
 	"pages/HMLogin/HMDoLoginView",
 	
 	"pages/HMView/HMViewView",
-	"pages/HMView/HMViewNowBtnView"
+	"pages/HMView/HMViewNowBtnView",
 	
+	"pages/HMPlanner/HMPlannerView",
+	
+	"pages/HMNotifications/HMNotificationsView",
+	"pages/HMReport/HMReportView",
+	"pages/HMWizard/HMWizardView",
+	"pages/HMConfiguration/HMConfigurationView",
+	"pages/HMCredits/HMCreditsView"
 ], function(
 	IndexRoute, ApplicationView, ApplicationController, Router,
+	HMNavbarView,
 	HMCRUDView, HMDoneView, HMListView, 
 	HMListTagsRoute, HMListTagsDefaultRoute, HMListTagsBigIconsRoute,
 	HMListTagsView, HMListTagsToolbarView, 
 	HMListTagsBigIconsView, HMListTagsHistoryView, HMListTagsUsersView, HMListTagsWindRoseView,
 	HMLoginView, HMDoLoginView,
-	HMViewView, HMViewNowBtnView
+	HMViewView, HMViewNowBtnView,
+	HMPlannerView,
+	HMNotificationsView,
+	HMReportView,
+	HMWizardView,
+	HMConfigurationView,
+	HMCreditsView
 	) {
 	/*Module Pattern*/
 	var App = {
@@ -43,6 +60,8 @@ define([
 		ApplicationController: ApplicationController,
 		Router: Router,
 		
+		HMNavbarView:HMNavbarView,
+		
 		HMCRUDView:HMCRUDView, HMDoneView:HMDoneView, HMListView:HMListView,
 		
 		HMListTagsRoute:HMListTagsRoute, HMListTagsDefaultRoute:HMListTagsDefaultRoute, HMListTagsBigIconsRoute:HMListTagsBigIconsRoute,
@@ -52,7 +71,14 @@ define([
 		HMListTagsUsersView:HMListTagsUsersView, HMListTagsWindRoseView:HMListTagsWindRoseView,
 		
 		HMLoginView: HMLoginView, HMDoLoginView: HMDoLoginView,
-		HMViewView:HMViewView, HMViewNowBtnView:HMViewNowBtnView
+		HMViewView:HMViewView, HMViewNowBtnView:HMViewNowBtnView,
+		
+		HMPlannerView:HMPlannerView,
+		HMNotificationsView:HMNotificationsView,
+		HMReportView:HMReportView,
+		HMWizardView:HMWizardView,
+		HMConfigurationView:HMConfigurationView,
+		HMCreditsView:HMCreditsView
 	};
 	return App;
 });

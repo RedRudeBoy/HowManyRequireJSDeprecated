@@ -1,9 +1,9 @@
 /** HMListTagsToolbar **/
-.btn-toolbar-views .btn {
-	min-width: 15%;
+.btn-toolbar-views > * {
+	width: 18%; /*23?*/
 }
-.btn-toolbar-filters .btn {
-	min-width: 10%;
+.btn-toolbar-filters > * {
+	width: 23%;
 }
 
 /** HMListTagsBigIcons **/

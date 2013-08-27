@@ -1,0 +1,19 @@
+.btn-toolbar#HMNavbarToolbar {
+	margin: 1px;
+}
+/*.nav-collapse#HMNavbarUserInfo {
+	padding: 4px 15px 2px;
+}*/
+.nav-collapse#HMNavbarUserInfo .dropdown-toggle {
+	padding: 3px 0px 0px 0px;
+}
+.nav-collapse#HMNavbarUserInfo .media-object {
+	width: 35px;
+	height: 35px;
+}
+.nav-collapse#HMNavbarUserInfo .media-heading {
+	padding-top: 10px;
+}
+.nav-collapse#HMNavbarUserInfo .caret {
+	margin: 18px 0px 0px 10px;
+}

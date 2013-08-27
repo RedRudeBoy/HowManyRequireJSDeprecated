@@ -1,7 +1,7 @@
 define([
 	"ember",
-	"text!./HMLogin.hbs",
-	"css!./HMLogin"
+	"text!./HMLogin.hbs"
+//	"css!./HMLogin"
 ], function(Ember, Template) {
 	var HMLoginView = Ember.View.extend({
 		defaultTemplate: Ember.Handlebars.compile(Template)

@@ -30,6 +30,11 @@ App.GAPI.reopenClass({
 		return this.list()[0];
 	}
 });
+/**
+ * More example code in:
+ *	https://github.com/arkadiyk/ember-google-drive-browser
+ */
+
 
 /*
 //Basic Object with extend feature & initialize function

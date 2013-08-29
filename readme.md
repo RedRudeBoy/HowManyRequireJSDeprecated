@@ -23,6 +23,7 @@ Quants mesos fa que no faig una escapada?
 8. [Twitter Bootstrap](http://getbootstrap.com/2.3.2/) - Front-end framework
 9. [GLYPHICONS Halflings](http://glyphicons.com/) - Monochromatic icons and symbols part of Bootstrap from Twitter
 10. [Font Awesome](http://fortawesome.github.io/Font-Awesome/) - The iconic font designed for Bootstrap
+11. [fuelUX](http://exacttarget.github.io/fuelux) - Additional lightweight JavaScript controls
 
 ## In the roadmap ##
 1. [d3js](http://d3js.org/) - Library for manipulating documents based on data
@@ -34,11 +35,10 @@ Quants mesos fa que no faig una escapada?
 7. [todc/todc-bootstrap](https://github.com/todc/todc-bootstrap) - Google-styled theme for Twitter Bootstrap
 8. [pfefferle/openwebicons](https://github.com/pfefferle/openwebicons) - Set of icons to show the support for the Open Web
 9. [kurakin/node-vcal](https://github.com/kurakin/node-vcal) - Create and parse ics files
-10. [fuelUX](http://exacttarget.github.io/fuelux) - Additional lightweight JavaScript controls
-11. [Bootstrap Arrows](http://bootstrap-arrows.iarfhlaith.com/) - Include arrows at any angle
-12. [Messenger](http://github.hubspot.com/messenger/) - Alerts for the 21st century
-13. [emberjs-addons/ember-bootstrap](https://github.com/emberjs-addons/ember-bootstrap) - A set of UI elements styled using the Boostrap toolkit to use with Ember.js
-14. [Ember.I18n](https://github.com/jamesarosen/ember-i18n) - Internationalization for Ember
+10. [Bootstrap Arrows](http://bootstrap-arrows.iarfhlaith.com/) - Include arrows at any angle
+11. [Messenger](http://github.hubspot.com/messenger/) - Alerts for the 21st century
+12. [emberjs-addons/ember-bootstrap](https://github.com/emberjs-addons/ember-bootstrap) - A set of UI elements styled using the Boostrap toolkit to use with Ember.js
+13. [Ember.I18n](https://github.com/jamesarosen/ember-i18n) - Internationalization for Ember
 
 ## Not used directly, but an important source of inspiration ##
 1. [Backbone](https://github.com/documentcloud/backbone) - MVC for browser
@@ -56,8 +56,5 @@ Quants mesos fa que no faig una escapada?
 Thank you very much to all this Open Source projects!!
 
 ## Installation ##
-I'm working in add to git submodules (git submodule add git@github.com:schacon/rack.git rack)
-cd scripts/libs/
-git clone https://github.com/ExactTarget/fuelux.git
-git clone https://github.com/guybedford/require-css.git
-git clone https://github.com/guybedford/require-less.git
+git clone https://github.com/RedRudeBoy/HowMany.git
+git submodule update --init

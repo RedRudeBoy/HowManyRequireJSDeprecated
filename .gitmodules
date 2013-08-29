@@ -1,0 +1,9 @@
+[submodule "scripts/libs/fuelux"]
+	path = scripts/libs/fuelux
+	url = https://github.com/ExactTarget/fuelux.git
+[submodule "scripts/libs/require-css"]
+	path = scripts/libs/require-css
+	url = https://github.com/guybedford/require-css.git
+[submodule "scripts/libs/require-less"]
+	path = scripts/libs/require-less
+	url = https://github.com/guybedford/require-less.git

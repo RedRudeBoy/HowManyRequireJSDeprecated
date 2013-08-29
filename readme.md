@@ -56,5 +56,7 @@ Quants mesos fa que no faig una escapada?
 Thank you very much to all this Open Source projects!!
 
 ## Installation ##
+```
 git clone https://github.com/RedRudeBoy/HowMany.git
 git submodule update --init
+```

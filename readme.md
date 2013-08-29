@@ -54,3 +54,10 @@ Quants mesos fa que no faig una escapada?
 11. [persvr/perstore](https://github.com/persvr/perstore) - Object store interface for mapping persistent objects to various different storage mediums
 
 Thank you very much to all this Open Source projects!!
+
+## Installation ##
+I'm working in add to git submodules (git submodule add git@github.com:schacon/rack.git rack)
+cd scripts/libs/
+git clone https://github.com/ExactTarget/fuelux.git
+git clone https://github.com/guybedford/require-css.git
+git clone https://github.com/guybedford/require-less.git

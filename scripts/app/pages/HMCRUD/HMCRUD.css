@@ -1,0 +1,25 @@
+.arrow-left {
+	width: 0; 
+	height: 0; 
+	border-top: 25px solid transparent;
+	border-bottom: 25px solid transparent; 
+	
+	border-right:25px solid green; 
+	
+	margin-right: -1px;
+}
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 25px solid transparent;
+	border-bottom: 25px solid transparent;
+	
+	border-left: 25px solid red;
+}
+.arrow-body {
+	width: 94%;
+	background-color: blue;
+	height: 25px;
+	margin-top: 12px;
+	margin-left: 1px;
+}

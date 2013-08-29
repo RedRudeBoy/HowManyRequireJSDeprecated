@@ -31,11 +31,23 @@ define({
 		disableI18n: true,
 		templateExtension: "hbs"
 	},
-	/* require-css plugin */
+	/* require-css/less plugins */
 	map: {
 		'*': {
-			'css': 'libs/require-css/css' // or whatever the path to require-css is
+			'css': 'libs/require-css/css',
+			'less': 'libs/require-less/less-builder'
 		}
-	}
-
+	},
+	packages: [
+		{
+			name: 'css',
+			location: 'require-css',
+			main: 'css'
+		},
+		{
+			name: 'less',
+			location: 'require-less',
+			main: 'less'
+		}
+	]
 });

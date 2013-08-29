@@ -10,6 +10,20 @@
 		</div>
 		<div class="row" style="margin-top: 10px;">
 			<div class="span6">
+				<legend>When?</legend>
+				<div class="row">
+					{{#view App.HMViewNowBtnView}}
+					<a class="span2 btn btn-block active">Now</a>
+					{{/view}}
+					<div class="span2 offset1" id="HMViewWhen" style="display: none;">
+						<input type="date">
+						<small>(default: now)</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="span6">
 				<legend>Wall</legend>
 				<div class="well">
 					<dl><!--class="dl-horizontal"-->
@@ -34,20 +48,6 @@
 					</div>
 				</div>
 				<!--<textarea  class="span6" rows="3" placeholder="Notes"></textarea>-->
-			</div>
-		</div>
-		<div class="row" style="margin-top: 10px;">
-			<div class="span6">
-				<legend>When?</legend>
-				<div class="row">
-					{{#view App.HMViewNowBtnView}}
-					<a class="span2 btn btn-block active">Now</a>
-					{{/view}}
-					<div class="span2 offset1" id="HMViewWhen" style="display: none;">
-						<input type="date">
-						<small>(default: now)</small>
-					</div>
-				</div>
 			</div>
 		</div>
 		<div class="row" style="display: none; margin-top: 10px;" id="HMViewDuration">

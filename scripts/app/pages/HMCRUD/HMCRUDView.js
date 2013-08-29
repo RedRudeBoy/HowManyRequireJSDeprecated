@@ -1,4 +1,4 @@
-define(["ember","text!./HMCRUD.hbs"], function(Ember,Template) {
+define(["ember","text!./HMCRUD.hbs","css!./HMCRUD","css!libs/fuelux/dist/css/fuelux","css!libs/fuelux/dist/css/fuelux-responsive","libs/fuelux/dist/wizard"], function(Ember,Template) {
 	var HMCRUDView = Ember.View.extend({
 //		templateName: 'HMCRUD',
 		defaultTemplate: Ember.Handlebars.compile(Template)

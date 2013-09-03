@@ -26,9 +26,9 @@ Quants mesos fa que no faig una escapada?
 11. [fuelUX](http://exacttarget.github.io/fuelux) - Additional lightweight JavaScript controls
 
 ## In the roadmap ##
-1. [d3js](http://d3js.org/) - Library for manipulating documents based on data
-2. [Raphaël](http://raphaeljs.com/) - Library that should simplify your work with vector graphics on the web
-3. [Moment.js](http://momentjs.com/) - Library for parsing, validating, manipulating, and formatting dates
+1. [Moment.js](http://momentjs.com/) - Library for parsing, validating, manipulating, and formatting dates
+2. [d3js](http://d3js.org/) - Library for manipulating documents based on data
+3. [Raphaël](http://raphaeljs.com/) - Library that should simplify your work with vector graphics on the web
 4. [∞.js](http://airbnb.github.io/infinity/) -  speeds up scrolling through long lists and keeps your infinite feeds smooth and stable for your users
 5. [iScroll](http://cubiq.org/) - Smooth scrolling for the web
 6. [StoicLoofah/chronoline.js](https://github.com/StoicLoofah/chronoline.js) - Library for making a chronology timeline out of events on a horizontal timescale
@@ -39,6 +39,9 @@ Quants mesos fa que no faig una escapada?
 11. [Messenger](http://github.hubspot.com/messenger/) - Alerts for the 21st century
 12. [emberjs-addons/ember-bootstrap](https://github.com/emberjs-addons/ember-bootstrap) - A set of UI elements styled using the Boostrap toolkit to use with Ember.js
 13. [Ember.I18n](https://github.com/jamesarosen/ember-i18n) - Internationalization for Ember
+## Ember plugins, probably merged in Ember 1.1 ##
+1. [billysbilling/ember-animated-outlet](https://github.com/billysbilling/ember-animated-outlet) - Animated transitions
+2. [ElteHupkes/ember-query-params](https://github.com/ElteHupkes/ember-query-params) - Optional extra params to router
 
 ## Not used directly, but an important source of inspiration ##
 1. [Backbone](https://github.com/documentcloud/backbone) - MVC for browser

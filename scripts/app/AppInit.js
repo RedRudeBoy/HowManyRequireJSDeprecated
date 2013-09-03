@@ -2,54 +2,60 @@ define([
 	"app/IndexRoute",
 	"app/ApplicationView",
 	"app/ApplicationController",
-	"app/router",
+	"app/Router",
 	
-	"pages/HMNavbar/HMNavbarView",
+	"pages/Configuration/ConfigurationView",
+	"pages/Credits/CreditsView",
 	
-	"pages/HMCRUD/HMCRUDView",
-	"pages/HMDone/HMDoneView",
-	"pages/HMList/HMListView",
+	//HowMany
+	"pages/HowMany/Done/HowManyDoneView",
+	"pages/HowMany/Edit/HowManyEditView",
+	"pages/HowMany/Index/HowManyIndexView",
+	"pages/HowMany/Index/HowManyIndexNowBtnView",
 	
-	"pages/HMListTags/HMListTagsRoute",
-	"pages/HMListTags/HMListTagsDefaultRoute",
-	"pages/HMListTags/HMListTagsBigIconsRoute",
+	//HowManys
+	"pages/HowManys/HowManysRoute",
+	"pages/HowManys/HowManysView",
+	"pages/HowManys/BigIcons/HowManysBigIconsRoute",
+	"pages/HowManys/BigIcons/HowManysBigIconsView",
+	"pages/HowManys/History/HowManysHistoryView",
+	"pages/HowManys/Index/HowManysIndexRoute",
+	"pages/HowManys/List/HowManysListRoute",
+	"pages/HowManys/List/HowManysListView",
+	"pages/HowManys/Toolbar/HowManysToolbarView",
+	"pages/HowManys/Users/HowManysUsersView",
+	"pages/HowManys/WindRose/HowManysWindRoseView",
 	
-	"pages/HMListTags/HMListTagsView",
-	"pages/HMListTags/HMListTagsToolbarView",
-	
-	"pages/HMListTags/HMListTagsBigIconsView",
-	"pages/HMListTags/HMListTagsHistoryView",
-	"pages/HMListTags/HMListTagsUsersView",
-	"pages/HMListTags/HMListTagsWindRoseView",
-	
-	"pages/HMLogin/HMLoginView",
-	"pages/HMLogin/HMDoLoginView",
-	
-	"pages/HMView/HMViewView",
-	"pages/HMView/HMViewNowBtnView",
-	
-	"pages/HMPlanner/HMPlannerView",
-	
-	"pages/HMNotifications/HMNotificationsView",
-	"pages/HMReport/HMReportView",
-	"pages/HMWizard/HMWizardView",
-	"pages/HMConfiguration/HMConfigurationView",
-	"pages/HMCredits/HMCreditsView"
+	"pages/Login/LoginView",
+	"pages/Login/DoLoginView",
+	"pages/Navbar/NavbarView",
+	"pages/Notifications/NotificationsView",
+	"pages/Planner/PlannerView",
+	"pages/Report/ReportView",
+	"pages/Wizard/WizardView"
 ], function(
 	IndexRoute, ApplicationView, ApplicationController, Router,
-	HMNavbarView,
-	HMCRUDView, HMDoneView, HMListView, 
-	HMListTagsRoute, HMListTagsDefaultRoute, HMListTagsBigIconsRoute,
-	HMListTagsView, HMListTagsToolbarView, 
-	HMListTagsBigIconsView, HMListTagsHistoryView, HMListTagsUsersView, HMListTagsWindRoseView,
-	HMLoginView, HMDoLoginView,
-	HMViewView, HMViewNowBtnView,
-	HMPlannerView,
-	HMNotificationsView,
-	HMReportView,
-	HMWizardView,
-	HMConfigurationView,
-	HMCreditsView
+	ConfigurationView,
+	CreditsView,
+	HowManyDoneView,HowManyEditView,HowManyIndexView,HowManyIndexNowBtnView,
+	
+	HowManysRoute,HowManysView,
+	
+	HowManysBigIconsRoute,HowManysBigIconsView,
+	HowManysHistoryView,
+	HowManysIndexRoute,
+	HowManysListRoute,
+	HowManysListView,
+	HowManysToolbarView,
+	HowManysUsersView,
+	HowManysWindRoseView,
+	
+	LoginView, DoLoginView,
+	NavbarView,
+	NotificationsView,
+	PlannerView,
+	ReportView,
+	WizardView
 	) {
 	/*Module Pattern*/
 	var App = {
@@ -60,25 +66,32 @@ define([
 		ApplicationController: ApplicationController,
 		Router: Router,
 		
-		HMNavbarView:HMNavbarView,
+		ConfigurationView: ConfigurationView,
+		CreditsView: CreditsView,
 		
-		HMCRUDView:HMCRUDView, HMDoneView:HMDoneView, HMListView:HMListView,
-		
-		HMListTagsRoute:HMListTagsRoute, HMListTagsDefaultRoute:HMListTagsDefaultRoute, HMListTagsBigIconsRoute:HMListTagsBigIconsRoute,
-		
-		HMListTagsView:HMListTagsView, HMListTagsToolbarView:HMListTagsToolbarView, 
-		HMListTagsBigIconsView:HMListTagsBigIconsView, HMListTagsHistoryView:HMListTagsHistoryView, 
-		HMListTagsUsersView:HMListTagsUsersView, HMListTagsWindRoseView:HMListTagsWindRoseView,
-		
-		HMLoginView: HMLoginView, HMDoLoginView: HMDoLoginView,
-		HMViewView:HMViewView, HMViewNowBtnView:HMViewNowBtnView,
-		
-		HMPlannerView:HMPlannerView,
-		HMNotificationsView:HMNotificationsView,
-		HMReportView:HMReportView,
-		HMWizardView:HMWizardView,
-		HMConfigurationView:HMConfigurationView,
-		HMCreditsView:HMCreditsView
+		HowManyDoneView: HowManyDoneView,
+		HowManyEditView: HowManyEditView,
+		HowManyIndexView: HowManyIndexView,
+		HowManyIndexNowBtnView : HowManyIndexNowBtnView,
+	
+		HowManysRoute: HowManysRoute,
+		HowManysView: HowManysView,
+	
+		HowManysBigIconsRoute: HowManysBigIconsRoute,HowManysBigIconsView: HowManysBigIconsView,
+		HowManysHistoryView: HowManysHistoryView,
+		HowManysIndexRoute: HowManysIndexRoute,
+		HowManysListRoute: HowManysListRoute,
+		HowManysListView: HowManysListView,
+		HowManysToolbarView: HowManysToolbarView,
+		HowManysUsersView: HowManysUsersView,
+		HowManysWindRoseView: HowManysWindRoseView,
+	
+		LoginView: LoginView, DoLoginView: DoLoginView,
+		NavbarView:NavbarView,
+		NotificationsView:NotificationsView,
+		PlannerView:PlannerView,
+		ReportView:ReportView,
+		WizardView:WizardView
 	};
 	return App;
 });

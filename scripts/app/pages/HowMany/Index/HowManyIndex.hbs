@@ -1,0 +1,84 @@
+<br /><br />
+<div class="row">
+	<h3 class="span6 offset3">Ja has fet:</h3>
+	<h1 class="span6 offset3">Visitar l'àvia?</h1>
+</div>
+<div class="row" style="margin-top: 10px;">
+	<div class="well span6 offset3">
+		<div class="row">
+			{{#linkTo 'HowMany.edit' class="span6 btn btn-block"}}<i class="icon-ok icon-3x"></i><br />I've done it!{{/linkTo}}
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="span6">
+				<legend>When?</legend>
+				<div class="row">
+					{{#view App.HowManyIndexNowBtnView}}
+					<a class="span2 btn btn-block active">Now</a>
+					{{/view}}
+					<div class="span2 offset1" id="HowManyIndexWhen" style="display: none;">
+						<input type="date">
+						<small>(default: now)</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="span6">
+				<legend>Wall</legend>
+				<div class="well">
+					<dl><!--class="dl-horizontal"-->
+						<dt>Lenin:</dt>
+						<dd>Booones bona gent!</dd>
+						<dd>Com us aniria quedar avui per fer un Game Of Thrones?</dd>
+						<dt>Dídac:</dt>
+						<dd>A quina hora vols quedar?</dd>
+						<dd>Saps que començarem tard...</dd>
+						<dt>Dan:</dt>
+						<dd>Sí</dd>
+						<dt>Laia:</dt>
+						<dd>Per mi sí</dd>
+						<dt>Dídac:</dt>
+						<dd>Quedem un altre dia amb més temps</dd>
+						<dt>Lenin:</dt>
+						<dd>Demà podré quedar a la mateixa hora que avui...</dd>
+					</dl>
+					<div class="row">
+						<input class="span4" type="text" placeholder="New message..." />
+						<button type="submit" class="btn span1">Send</button>
+					</div>
+				</div>
+				<!--<textarea  class="span6" rows="3" placeholder="Notes"></textarea>-->
+			</div>
+		</div>
+		<div class="row" style="display: none; margin-top: 10px;" id="HowManyIndexDuration">
+			<div class="span6">
+				<legend>Duration</legend>
+				<input type="time">
+				<small>(default: 1 hour - Only visible if when is defined)</small>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row" style="margin-top: 10px;">
+	<div class="well span6 offset3">
+		<div class="row">
+			<div class="span6">
+				<a class="btn btn-block"><i class="icon-calendar-empty icon-2x"></i><br />I wanna do it!<br />Let's find a date!</a>
+			</div>
+		</div>
+		<br /><br />
+		<div class="row">
+			<div class="span6">
+				{{#linkTo 'HowMany.edit' class="btn btn-block"}}<i class="icon-gear"></i> Edit{{/linkTo}}
+			</div>
+		</div>
+	</div>
+</div>
+<!--
+<div class="row" style="margin-top: 50px;">
+	{{#linkTo 'Planner' class="span6 offset3 btn btn-block"}}<i class="icon-calendar-empty icon-2x"></i><br />I wanna do it!<br />Let's find a date!{{/linkTo}}
+</div>
+<div class="row" style="margin-top: 50px;">
+	{{#linkTo 'HowMany.edit' class="span6 offset3 btn btn-block"}}<i class="icon-gear"></i> Edit{{/linkTo}}
+</div>
+-->

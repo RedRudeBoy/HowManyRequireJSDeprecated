@@ -1,21 +1,37 @@
-define(["ember"], function(Ember){
+define(["ember",'Gapi/GapiLogin'], function(Ember,GapiLogin){
 
 var IndexRoute = Ember.Route.extend({
 	redirect: function() {
-		console.log('IndexRoute redirect, authorized?');
+//		//Login here?
+//		console.log('IndexRoute redirect, authorized?');
+//		GapiLogin.auth(true, function(authResult) {
+//			console.log('IndexRoute authResult:');
+//			console.log(authResult);
+//			if (authResult && !authResult.error) {
+//				console.log('OK!');
+//				this.transitionTo('HowManys.default');
+//			} else {
+				console.log('KO!');
+				this.transitionTo('Login');
+//			}
+//		});
+		
+		//Login in HowManys.default
+//		this.transitionTo('HowManys.default');
+		
 //		if(!Ember.isNone(App.gapi) && !Ember.isNone(App.gapi.isAuthorized) && App.gapi.isAuthorized) {
 //			App.log(App.gapi.isAuthorized);
-//			this.transitionTo('HMList');
+//			this.transitionTo('HowManys.default');
 //		} else {
 //			App.log('goTo login');
-			this.transitionTo('HMLogin');
+//			this.transitionTo('Login');
 //		}
-//		console.log('require HMLogin');
+//		console.log('require Login');
 		
 //		define('actualRouting',this);
-//		require(['actualRouting',"pages/HMLogin/HMLoginView"], function(actRouting,HMLogin){
-//			console.log('required HMLogin OK! going to it!');
-//			actRouting.transitionTo('HMLogin');
+//		require(['actualRouting',"pages/Login/LoginView"], function(actRouting,Login){
+//			console.log('required Login OK! going to it!');
+//			actRouting.transitionTo('Login');
 //		});
 //		console.log('mec?');
 	}

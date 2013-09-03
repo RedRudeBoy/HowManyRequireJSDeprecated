@@ -1,0 +1,19 @@
+.btn-toolbar#NavbarToolbar {
+	margin: 1px;
+}
+/*.nav-collapse#NavbarUserInfo {
+	padding: 4px 15px 2px;
+}*/
+.nav-collapse#NavbarUserInfo .dropdown-toggle {
+	padding: 3px 0px 0px 0px;
+}
+.nav-collapse#NavbarUserInfo .media-object {
+	width: 35px;
+	height: 35px;
+}
+.nav-collapse#NavbarUserInfo .media-heading {
+	padding-top: 10px;
+}
+.nav-collapse#NavbarUserInfo .caret {
+	margin: 18px 0px 0px 10px;
+}

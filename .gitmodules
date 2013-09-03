@@ -7,3 +7,6 @@
 [submodule "scripts/libs/require-less"]
 	path = scripts/libs/require-less
 	url = https://github.com/guybedford/require-less.git
+[submodule "scripts/libs/moment"]
+	path = scripts/libs/moment
+	url = https://github.com/moment/moment.git

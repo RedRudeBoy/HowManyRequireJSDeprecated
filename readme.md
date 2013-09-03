@@ -39,7 +39,8 @@ Quants mesos fa que no faig una escapada?
 11. [Messenger](http://github.hubspot.com/messenger/) - Alerts for the 21st century
 12. [emberjs-addons/ember-bootstrap](https://github.com/emberjs-addons/ember-bootstrap) - A set of UI elements styled using the Boostrap toolkit to use with Ember.js
 13. [Ember.I18n](https://github.com/jamesarosen/ember-i18n) - Internationalization for Ember
-## Ember plugins, probably merged in Ember 1.1 ##
+
+## Interesting Ember plugins, probably merged in Ember 1.1 ##
 1. [billysbilling/ember-animated-outlet](https://github.com/billysbilling/ember-animated-outlet) - Animated transitions
 2. [ElteHupkes/ember-query-params](https://github.com/ElteHupkes/ember-query-params) - Optional extra params to router
 

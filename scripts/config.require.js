@@ -1,10 +1,27 @@
 define({
 	app_name: "App", 
 	shim : {
+//		'handlebars-helpers' : {
+//			deps: ['handlebars']
+////			exports: 'Ember'
+//		},
+		'handlebars' : {
+			exports: 'Handlebars'
+		},
 		'ember' : {
 			deps: ['handlebars', 'jquery'],
 			exports: 'Ember'
 		},
+		//ember-data
+		DS: {
+			deps: ['ember'],
+			exports: 'DS'
+		},
+		//ember-localstorage-adapter
+//		LS: {
+//			deps: ['ember', 'DS'],
+//			exports: 'DS.LSAdapter'
+//		},
 		bootstrap: {
 			deps: ['jquery'],
 			exports: "$.fn.tooltip"
@@ -21,7 +38,10 @@ define({
 		/*libs*/
 		'jquery': 'libs/jquery/1.9.1/jquery',
 		'handlebars': 'libs/handlebars/1.0.0/handlebars',
+		'handlebars-helpers': 'libs/ember-handlebars-helpers/ember-handlebars-helpers',
 		'ember': 'libs/ember/1.0.0/ember',
+		'DS': 'libs/ember-data/1.0.0-beta.2/ember-data',
+//		'LS': 'libs/ember-localstorage-adapter/localstorage_adapter.js',
 		'bootstrap': 'libs/bootstrap/2.3.2/js/bootstrap',
 		'moment': 'libs/moment/min/moment.min',
 		'momentlangs': 'libs/moment/min/langs.min',

@@ -3,15 +3,15 @@ define(["ember",'Gapi/GapiLogin'], function(Ember,GapiLogin){
 var IndexRoute = Ember.Route.extend({
 	redirect: function() {
 //		//Login here?
-//		console.log('IndexRoute redirect, authorized?');
+//		Ember.Logger.log('IndexRoute redirect, authorized?');
 //		GapiLogin.auth(true, function(authResult) {
-//			console.log('IndexRoute authResult:');
-//			console.log(authResult);
+//			Ember.Logger.log('IndexRoute authResult:');
+//			Ember.Logger.log(authResult);
 //			if (authResult && !authResult.error) {
-//				console.log('OK!');
+//				Ember.Logger.log('OK!');
 //				this.transitionTo('HowManys.default');
 //			} else {
-				console.log('KO!');
+				Ember.Logger.log('KO!');
 				this.transitionTo('Login');
 //			}
 //		});
@@ -26,14 +26,14 @@ var IndexRoute = Ember.Route.extend({
 //			App.log('goTo login');
 //			this.transitionTo('Login');
 //		}
-//		console.log('require Login');
+//		Ember.Logger.log('require Login');
 		
 //		define('actualRouting',this);
 //		require(['actualRouting',"pages/Login/LoginView"], function(actRouting,Login){
-//			console.log('required Login OK! going to it!');
+//			Ember.Logger.log('required Login OK! going to it!');
 //			actRouting.transitionTo('Login');
 //		});
-//		console.log('mec?');
+//		Ember.Logger.log('mec?');
 	}
 //	https://groups.google.com/forum/#!msg/requirejs/QWkw1GGQMl8/odZk79qE6-IJ
 //	init: function() {this._super();},			//called when objects are instantiated

@@ -26,19 +26,26 @@ Quants mesos fa que no faig una escapada?
 11. [fuelUX](http://exacttarget.github.io/fuelux) - Additional lightweight JavaScript controls
 
 ## In the roadmap ##
-1. [d3js](http://d3js.org/) - Library for manipulating documents based on data
-2. [Raphaël](http://raphaeljs.com/) - Library that should simplify your work with vector graphics on the web
-3. [Moment.js](http://momentjs.com/) - Library for parsing, validating, manipulating, and formatting dates
-4. [∞.js](http://airbnb.github.io/infinity/) -  speeds up scrolling through long lists and keeps your infinite feeds smooth and stable for your users
-5. [iScroll](http://cubiq.org/) - Smooth scrolling for the web
+1. [Moment.js](http://momentjs.com/) - Library for parsing, validating, manipulating, and formatting dates
+2. [ebryn/ember-model](https://github.com/ebryn/ember-model/) - A lightweight model library for Ember.js
+3. [d3js](http://d3js.org/) - Library for manipulating documents based on data
+4. [Raphaël](http://raphaeljs.com/) - Library that should simplify your work with vector graphics on the web
+5. [CrowdStrike/ember-timetree](https://github.com/CrowdStrike/ember-timetree) - Visualize hierarchical timeline data. Built with Ember.js and D3.js
 6. [StoicLoofah/chronoline.js](https://github.com/StoicLoofah/chronoline.js) - Library for making a chronology timeline out of events on a horizontal timescale
-7. [todc/todc-bootstrap](https://github.com/todc/todc-bootstrap) - Google-styled theme for Twitter Bootstrap
-8. [pfefferle/openwebicons](https://github.com/pfefferle/openwebicons) - Set of icons to show the support for the Open Web
-9. [kurakin/node-vcal](https://github.com/kurakin/node-vcal) - Create and parse ics files
-10. [Bootstrap Arrows](http://bootstrap-arrows.iarfhlaith.com/) - Include arrows at any angle
-11. [Messenger](http://github.hubspot.com/messenger/) - Alerts for the 21st century
-12. [emberjs-addons/ember-bootstrap](https://github.com/emberjs-addons/ember-bootstrap) - A set of UI elements styled using the Boostrap toolkit to use with Ember.js
+7. [emberjs/list-view](https://github.com/emberjs/list-view) - An efficient incremental rendering list view for large lists
+8. [∞.js](http://airbnb.github.io/infinity/) - Speeds up scrolling through long lists and keeps your infinite feeds smooth and stable for your users
+9. [iScroll](http://cubiq.org/) - Smooth scrolling for the web
+10. [Messenger](http://github.hubspot.com/messenger/) - Alerts for the 21st century
+11. [emberjs-addons/ember-bootstrap](https://github.com/emberjs-addons/ember-bootstrap) - A set of UI elements styled using the Boostrap toolkit to use with Ember.js
+12. [todc/todc-bootstrap](https://github.com/todc/todc-bootstrap) - Google-styled theme for Twitter Bootstrap
 13. [Ember.I18n](https://github.com/jamesarosen/ember-i18n) - Internationalization for Ember
+14. [Bootstrap Arrows](http://bootstrap-arrows.iarfhlaith.com/) - Include arrows at any angle
+15. [pfefferle/openwebicons](https://github.com/pfefferle/openwebicons) - Set of icons to show the support for the Open Web
+16. [kurakin/node-vcal](https://github.com/kurakin/node-vcal) - Create and parse ics files
+17. [dgeb/grunt-ember-templates](https://github.com/dgeb/grunt-ember-templates) - Precompile Handlebars templates for Ember.js
+
+## In the long-term roadmap ##
+1. This app requires a lot of information of the user, in a perfect world, all this data must be private & personal. [It's necessary to build a backend with webfinger](https://github.com/RedRudeBoy/HowManyBackendNodeDeprecated) for create independent nodes [("pods")](http://podupti.me/) like [diaspora](https://diasporafoundation.org/about).
 
 ## Not used directly, but an important source of inspiration ##
 1. [Backbone](https://github.com/documentcloud/backbone) - MVC for browser
@@ -60,3 +67,10 @@ Thank you very much to all this Open Source projects!!
 git clone https://github.com/RedRudeBoy/HowMany.git
 git submodule update --init
 ```
+
+## [Google APIs](https://developers.google.com/google-apps/app-apis) needed: ##
+1. [Google APIs Client Library for JavaScript](https://developers.google.com/api-client-library/javascript/) - JavaScript client-application [Example](https://developers.google.com/api-client-library/javascript/start/start-js)
+2. [Google Calendar API](https://developers.google.com/google-apps/calendar/)
+3. [Google Tasks API](https://developers.google.com/google-apps/tasks/)
+4. [Google Drive SDK](https://developers.google.com/drive/quickstart-js)
+1. [Google Picker](https://developers.google.com/picker/docs) - Google Picker is a "File Open" dialog for the information stored in Google servers

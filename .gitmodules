@@ -10,3 +10,9 @@
 [submodule "scripts/libs/moment"]
 	path = scripts/libs/moment
 	url = https://github.com/moment/moment.git
+[submodule "scripts/libs/ember-localstorage-adapter"]
+	path = scripts/libs/ember-localstorage-adapter
+	url = https://github.com/rpflorence/ember-localstorage-adapter.git
+[submodule "scripts/libs/ember-handlebars-helpers"]
+	path = scripts/libs/ember-handlebars-helpers
+	url = https://github.com/RedRudeBoy/Ember-Handlebars-Helpers.git

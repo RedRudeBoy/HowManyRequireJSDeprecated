@@ -1,8 +1,15 @@
+/**
+ * Very ugly class... includes all the dependencies of App
+ */
 define([
-	"app/IndexRoute",
 	"app/ApplicationView",
 	"app/ApplicationController",
+	"app/ApplicationRoute",
+	"app/IndexRoute",
 	"app/Router",
+	
+//	"models/Tags",
+	"models/TagDSModel",
 	
 	"pages/Configuration/ConfigurationView",
 	"pages/Credits/CreditsView",
@@ -12,10 +19,15 @@ define([
 	"pages/HowMany/Edit/HowManyEditView",
 	"pages/HowMany/Index/HowManyIndexView",
 	"pages/HowMany/Index/HowManyIndexNowBtnView",
+	"pages/HowMany/HowManyController",
 	
 	//HowManys
+	"pages/HowManys/HowManysController",
 	"pages/HowManys/HowManysRoute",
 	"pages/HowManys/HowManysView",
+	"pages/HowManys/BigIcons/HowManysBigIconsController",
+	"pages/HowManys/BigIcons/HowManysBigIconsItemController",
+	"pages/HowManys/BigIcons/HowManysBigIconsItemView",
 	"pages/HowManys/BigIcons/HowManysBigIconsRoute",
 	"pages/HowManys/BigIcons/HowManysBigIconsView",
 	"pages/HowManys/History/HowManysHistoryView",
@@ -34,13 +46,18 @@ define([
 	"pages/Report/ReportView",
 	"pages/Wizard/WizardView"
 ], function(
-	IndexRoute, ApplicationView, ApplicationController, Router,
+	ApplicationView, ApplicationController, ApplicationRoute, IndexRoute, Router,
+//	Tags,
+	TagDSModel,
+	
 	ConfigurationView,
 	CreditsView,
 	HowManyDoneView,HowManyEditView,HowManyIndexView,HowManyIndexNowBtnView,
+	HowManyController,
+	HowManysController,HowManysRoute,HowManysView,
 	
-	HowManysRoute,HowManysView,
-	
+	HowManysBigIconsController,
+	HowManysBigIconsItemController,HowManysBigIconsItemView,
 	HowManysBigIconsRoute,HowManysBigIconsView,
 	HowManysHistoryView,
 	HowManysIndexRoute,
@@ -59,33 +76,47 @@ define([
 	) {
 	/*Module Pattern*/
 	var App = {
-		LOG_TRANSITIONS: true,
+		LOG_STACKTRACE_ON_DEPRECATION : true,
+		LOG_TRANSITIONS               : true,
+//		LOG_TRANSITIONS_INTERNAL      : true,
+//		LOG_VIEW_LOOKUPS              : true,
+//		LOG_ACTIVE_GENERATION         : true,
 		
-		IndexRoute: IndexRoute,
 		ApplicationView: ApplicationView,
 		ApplicationController: ApplicationController,
+//		ApplicationRoute: ApplicationRoute,
+		IndexRoute: IndexRoute,
 		Router: Router,
+//		tags: Tags,
+		ApplicationAdapter: DS.FixtureAdapter.extend(),
+		Tag: TagDSModel,
 		
 		ConfigurationView: ConfigurationView,
 		CreditsView: CreditsView,
-		
+
 		HowManyDoneView: HowManyDoneView,
 		HowManyEditView: HowManyEditView,
 		HowManyIndexView: HowManyIndexView,
 		HowManyIndexNowBtnView : HowManyIndexNowBtnView,
-	
-		HowManysRoute: HowManysRoute,
+		HowManyController: HowManyController,
+
+//		HowManysController: HowManysController,
+//		HowManysRoute: HowManysRoute,
 		HowManysView: HowManysView,
-	
-		HowManysBigIconsRoute: HowManysBigIconsRoute,HowManysBigIconsView: HowManysBigIconsView,
+
+//		HowManysBigIconsController: HowManysBigIconsController,
+//		HowManysBigIconsItemView: HowManysBigIconsItemView,
+//		HowManysBigIconsItemController: HowManysBigIconsItemController,
+		HowManysBigIconsRoute: HowManysBigIconsRoute,
+		HowManysBigIconsView: HowManysBigIconsView,
 		HowManysHistoryView: HowManysHistoryView,
 		HowManysIndexRoute: HowManysIndexRoute,
-		HowManysListRoute: HowManysListRoute,
+//		HowManysListRoute: HowManysListRoute,
 		HowManysListView: HowManysListView,
 		HowManysToolbarView: HowManysToolbarView,
 		HowManysUsersView: HowManysUsersView,
 		HowManysWindRoseView: HowManysWindRoseView,
-	
+
 		LoginView: LoginView, DoLoginView: DoLoginView,
 		NavbarView:NavbarView,
 		NotificationsView:NotificationsView,

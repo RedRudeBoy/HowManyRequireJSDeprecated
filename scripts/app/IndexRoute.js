@@ -1,4 +1,4 @@
-define(["ember",'Gapi/GapiLogin'], function(Ember,GapiLogin){
+define(["ember"/*,'Gapi/GapiLogin'*/], function(Ember,GapiLogin){
 
 var IndexRoute = Ember.Route.extend({
 	redirect: function() {

@@ -23,7 +23,7 @@ define(["ember","Gapi/GapiFactory"], function(Ember,Gapi) {
 		}
 	});
 	//Class Methods
-	App.GAPI.reopenClass({
+	GapiCalendar.reopenClass({
 		list: function() {
 			// If we've already loaded the list, return it
 			if (this._events) { return this._events; }

@@ -33,7 +33,7 @@ define({
 		'App': 'app/App',
 		
 		'models': 'app/models',
-		'Gapi': 'app/models/GapiProvider',
+//		'Gapi': 'app/models/GapiProvider',
 		'pages': 'app/pages',
 		/*libs*/
 		'jquery': 'libs/jquery/1.9.1/jquery',
@@ -41,7 +41,10 @@ define({
 		'handlebars-helpers': 'libs/ember-handlebars-helpers/ember-handlebars-helpers',
 		'ember': 'libs/ember/1.0.0/ember',
 		'DS': 'libs/ember-data/1.0.0-beta.2/ember-data',
-//		'LS': 'libs/ember-localstorage-adapter/localstorage_adapter.js',
+		'LS': 'libs/ember-localstorage-adapter/localstorage_adapter.js',
+		'GS': 'libs/ember-gapi-adapter',
+		'GSAdapter': 'libs/ember-gapi-adapter/ember-gapi-adapter.js',
+		'GSModels': 'libs/ember-gapi-adapter/models',
 		'bootstrap': 'libs/bootstrap/2.3.2/js/bootstrap',
 		'moment': 'libs/moment/min/moment.min',
 		'momentlangs': 'libs/moment/min/langs.min',

@@ -1,6 +1,7 @@
-define(["ember"/*,"models/Tags"*/], function(Ember/*,Model*/){
+/*,"models/Tags"     ,Model */
+define(["ember"], function(Ember){
 	var HowManysRoute = Ember.Route.extend({
-		model: function() {
+//		model: function() {
 //			return App.Employee.find();
 //			return ['Food','Health'];
 //			Ember.Logger.log('HowManysRoute model',Model);
@@ -12,9 +13,10 @@ define(["ember"/*,"models/Tags"*/], function(Ember/*,Model*/){
 //			return Model;
 //			return Ember.Object.extend(Model.Tags);
 //			return o;
-			Ember.Logger.log('HowManysRoute recover model:',this.store.find('tag'));
-			return this.store.find('tag');
-		},
+//debugger;
+//			Ember.Logger.log('HowManysRoute recover model:',this.store.find('tag'));
+//			return this.store.find('tag');
+//		},
 //		setupController: function (controller, model) {
 //			Ember.Logger.log('HowManysRoute setupController', controller, model, controller.toString());
 //			controller.set('model', model);

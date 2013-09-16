@@ -16,13 +16,23 @@ define(["ember"], function(Ember){
 		this.resource('HowMany', function() {
 									//HowManyIndex - HMView
 			this.route('edit');				//HowManyEdit - HMCRUD
+//			this.route('edit', { path: "edit/:hm_id" });				//HowManyEdit - HMCRUD
 			this.route('done');				//HowManyDone - HMDone
+			this.route('planner');
+			this.route('planning');
+		});
+		this.resource('Wizard', function () {
+			this.route('Welcome');
+			this.route('BasicInfo');
+			this.route('Body');
+			this.route('Mind');
+			this.route('Work');
+			this.route('Vice');
+			this.route('Finish');
 		});
 		this.route('Login');
-		this.route('Planner');
 		this.route('Notifications');
 		this.route('Report');
-		this.route('Wizard');
 		this.route('Configuration');
 		this.route('Credits');
 	});

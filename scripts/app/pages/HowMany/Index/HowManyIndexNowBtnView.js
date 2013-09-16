@@ -1,7 +1,7 @@
 define(["ember","jquery"], function(Ember,$) {
 	var HowManyIndexNowBtnView = Ember.View.extend({
 		click: function() {
-			$('#HowManyIndexWhen,#HowManyIndexDuration').toggle();
+			$('#HowManyIndexDateTime,#HowManyIndexDateTimeLegend').toggle();
 			$("#"+this.elementId).children('.btn').toggleClass('active');
 		}
 	});

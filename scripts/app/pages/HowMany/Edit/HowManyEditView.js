@@ -1,7 +1,34 @@
-define(["ember","text!./HowManyEdit.hbs","css!./HowManyEdit","css!libs/fuelux/dist/css/fuelux","css!libs/fuelux/dist/css/fuelux-responsive","libs/fuelux/dist/wizard"], function(Ember,Template) {
+define(["ember","text!./HowManyEdit.hbs","css!./HowManyEdit","libs/fuelux/dist/combobox"/*,"css!libs/fuelux/dist/css/fuelux","css!libs/fuelux/dist/css/fuelux-responsive"*/], function(Ember,Template) {
 	var HowManyEdit = Ember.View.extend({
 //		templateName: 'HowManyEdit',
-		defaultTemplate: Ember.Handlebars.compile(Template)
+		defaultTemplate: Ember.Handlebars.compile(Template),
+		didInsertElement: function() {
+//			Ember.Logger.log('inserted!',this,this.$());
+			var selfView = this;
+			this.$().find('.HowManyEditTag').each(function(key, el) {
+				selfView.tagsBinder(el);
+			});
+		},
+		tagsBinder: function(el) {
+			/**
+			 * @ToDo: touchmove
+			 */
+			$(el).bind('mousemove', function (e) {
+				var parentOffset = $(el).offset();
+				var center = { x: parentOffset.left + 150, y: parentOffset.top + 150 };
+//				var touch = { x: e.originalEvent.layerX, y: e.originalEvent.layerY }; //Not working
+                var mouse = { x: e.clientX, y: e.clientY };
+				var d = { x: (mouse.x - center.x), y: (mouse.y - center.y) };
+				var dr = Math.sqrt( d.x * d.x + d.y * d.y );
+				if(dr > 100) dr = 100;
+				if(dr < 20) dr = 20;
+				e.target.setAttribute("r", dr);
+//				Ember.Logger.log($(el),parentOffset,center,mouse,d);
+			});
+		},
+		imgChange: function(e) {
+			alert(e);
+		}
 	});
 	return HowManyEdit;
 });

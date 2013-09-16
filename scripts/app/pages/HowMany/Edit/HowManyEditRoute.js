@@ -1,14 +1,18 @@
 define(["ember"], function(Ember){
-	var HowManysBigIconsRoute = Ember.Route.extend({
+	var HowManyEditRoute = Ember.Route.extend({
 		model: function() {
-//			Ember.Logger.log('Recover model:',this.modelFor('HowManys'));
-//			return this.modelFor('HowManys');
-			Ember.Logger.log('Recover model:',this.store.find('tag'));
-			return this.store.find('tag');
-		},
-		afterModel: function(model, transition) {
-			Ember.Logger.log('afterModel',model);
-		},
+			Ember.Logger.log('Recover model:',this.modelFor('HowMany'));
+			return this.modelFor('HowMany');
+		}
+		,actions: {
+			imgChange: function() {
+				Ember.Logger.log('Change the image of the user');
+//				this.currentModel.toJSON();
+			}
+		}
+//		afterModel: function(model, transition) {
+//			Ember.Logger.log('afterModel',model);
+//		},
 //		activate: function() {
 //			Ember.Logger.log('HowManysBigIconsRoute activate');
 //		},
@@ -18,5 +22,5 @@ define(["ember"], function(Ember){
 //			controller.set('model', model);
 //		}
 	});
-	return HowManysBigIconsRoute;
+	return HowManyEditRoute;
 });

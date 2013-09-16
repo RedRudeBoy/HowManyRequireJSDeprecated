@@ -1,8 +1,8 @@
-define(["ember","models/Tags"], function(Ember, Model){
+define(["ember"], function(Ember){
 	var HowManysController = Ember.ArrayController.extend({
 //		sortProperties: ['name', 'artist'],
 //		sortAscending: true // false for descending
-//		content: Model,
+		
 //		itemController: 'howMany',
 //		childrenLength: 0
 //		childrenLength: function() {

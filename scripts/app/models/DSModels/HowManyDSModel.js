@@ -5,7 +5,7 @@ var HowMany = DS.Model.extend({
   , task: DS.belongsTo('Task')
 //  , events: DS.hasMany('Event')
 //  , contacts: DS.hasMany('Contact')
-  , tagz: DS.hasMany('Tag', {inverse: 'howmanyz'})
+  , tags: DS.hasMany('Tag', { async: true })	//Why async??
 
 });
 
@@ -19,7 +19,7 @@ HowMany.FIXTURES =
 //		'_8d9lcgrfdpr6asjk60rmacpl6sp3aphm6cr38c316kojaopjcdi3ap9jcpj62c1jckqg'
 //	],
 //	contacts: [],
-	tagz: ['24']
+	tags: [2,3]
 }];
 
 	return HowMany;

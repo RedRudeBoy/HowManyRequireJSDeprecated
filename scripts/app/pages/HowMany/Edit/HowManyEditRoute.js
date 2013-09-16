@@ -3,6 +3,8 @@ define(["ember"], function(Ember){
 		model: function() {
 			Ember.Logger.log('Recover model:',this.modelFor('HowMany'));
 			return this.modelFor('HowMany');
+//			Ember.Logger.log('HowManyRoute recover model:',this.store.find('howMany',1));
+//			return this.store.find('Tag',24); //Routing params & querys
 		}
 		,actions: {
 			imgChange: function() {

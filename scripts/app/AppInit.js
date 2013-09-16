@@ -14,16 +14,16 @@ define([
  */
 	"app/ApplicationView",
 	"app/ApplicationController",
-	"app/ApplicationRoute",
+//	"app/ApplicationRoute",
 	"app/IndexRoute",
 	"app/Router",
 
 /**
  * Models
  */
-	"models/DSModels/HowManyDSModel",
 	"models/DSModels/TagDSModel",
 	"models/DSModels/UserConfigurationDSModel",
+	"models/DSModels/HowManyDSModel",
 	"GSModels/Calendar",
 //	"GSModels/CalendarList",
 //	"GSModels/CalendarListEntry",
@@ -53,17 +53,17 @@ define([
 	"pages/HowMany/HowManyRoute",
 	
 	//HowManys
-	"pages/HowManys/HowManysController",
+//	"pages/HowManys/HowManysController",
 //	"pages/HowManys/HowManysRoute",
 	"pages/HowManys/HowManysView",
-	"pages/HowManys/BigIcons/HowManysBigIconsController",
-	"pages/HowManys/BigIcons/HowManysBigIconsItemController",
-	"pages/HowManys/BigIcons/HowManysBigIconsItemView",
+//	"pages/HowManys/BigIcons/HowManysBigIconsController",
+//	"pages/HowManys/BigIcons/HowManysBigIconsItemController",
+//	"pages/HowManys/BigIcons/HowManysBigIconsItemView",
 	"pages/HowManys/BigIcons/HowManysBigIconsRoute",
 	"pages/HowManys/BigIcons/HowManysBigIconsView",
 	"pages/HowManys/History/HowManysHistoryView",
 	"pages/HowManys/Index/HowManysIndexRoute",
-	"pages/HowManys/List/HowManysListRoute",
+//	"pages/HowManys/List/HowManysListRoute",
 	"pages/HowManys/List/HowManysListView",
 	"pages/HowManys/Toolbar/HowManysToolbarView",
 	"pages/HowManys/Users/HowManysUsersView",
@@ -90,12 +90,14 @@ define([
 //	GSAdapter,
 //	
 	//Application
-	ApplicationView, ApplicationController, ApplicationRoute, IndexRoute, Router,
+	ApplicationView, ApplicationController,
+//	ApplicationRoute,
+	IndexRoute, Router,
 
 	//Models
-	HowManyDSModel,
 	TagDSModel,
 	UserConfigurationDSModel,
+	HowManyDSModel,
 	Calendar,
 //	CalendarList,
 //	CalendarListEntry,
@@ -109,6 +111,7 @@ define([
 	ConfigurationView,
 	ConfigurationRoute,
 	CreditsView,
+	
 	HowManyDoneView,HowManyEditRoute,HowManyEditView,HowManyIndexView,HowManyIndexNowBtnView,
 	HowManyPlannerView,
 	HowManyPlanningRoute,
@@ -116,16 +119,16 @@ define([
 	HowManyController,
 	HowManyRoute,
 	
-	HowManysController,
+//	HowManysController,
 //	HowManysRoute,
 	HowManysView,
 	
-	HowManysBigIconsController,
-	HowManysBigIconsItemController,HowManysBigIconsItemView,
+//	HowManysBigIconsController,
+//	HowManysBigIconsItemController,HowManysBigIconsItemView,
 	HowManysBigIconsRoute,HowManysBigIconsView,
 	HowManysHistoryView,
 	HowManysIndexRoute,
-	HowManysListRoute,
+//	HowManysListRoute,
 	HowManysListView,
 	HowManysToolbarView,
 	HowManysUsersView,
@@ -151,7 +154,7 @@ define([
 //		LOG_ACTIVE_GENERATION         : true,
 
 /**
- * Stores
+ * Stores: DS, LS & GSAdapter
  */
 		ApplicationAdapter: DS.FixtureAdapter.extend(),
 		
@@ -167,9 +170,9 @@ define([
 /**
  * Models
  */
-		HowMany: HowManyDSModel,
 		Tag: TagDSModel,
 		UserConfiguration: UserConfigurationDSModel,
+		HowMany: HowManyDSModel,
 		Calendar: Calendar,
 //		CalendarList: CalendarList,
 //		CalendarListEntry: CalendarListEntry,
@@ -202,8 +205,8 @@ define([
 		HowManysView: HowManysView,
 
 //		HowManysBigIconsController: HowManysBigIconsController,
-//		HowManysBigIconsItemView: HowManysBigIconsItemView,
 //		HowManysBigIconsItemController: HowManysBigIconsItemController,
+//		HowManysBigIconsItemView: HowManysBigIconsItemView,
 		HowManysBigIconsRoute: HowManysBigIconsRoute,
 		HowManysBigIconsView: HowManysBigIconsView,
 		HowManysHistoryView: HowManysHistoryView,

@@ -18,10 +18,10 @@ define({
 			exports: 'DS'
 		},
 		//ember-localstorage-adapter
-//		LS: {
-//			deps: ['ember', 'DS'],
-//			exports: 'DS.LSAdapter'
-//		},
+		LS: {
+			deps: ['ember', 'DS'],
+			exports: 'DS.LSAdapter'
+		},
 		bootstrap: {
 			deps: ['jquery'],
 			exports: "$.fn.tooltip"
@@ -41,9 +41,9 @@ define({
 		'handlebars-helpers': 'libs/ember-handlebars-helpers/ember-handlebars-helpers',
 		'ember': 'libs/ember/1.0.0/ember',
 		'DS': 'libs/ember-data/1.0.0-beta.2/ember-data',
-		'LS': 'libs/ember-localstorage-adapter/localstorage_adapter.js',
+		'LS': 'libs/ember-localstorage-adapter/localstorage_adapter',
 		'GS': 'libs/ember-gapi-adapter',
-		'GSAdapter': 'libs/ember-gapi-adapter/ember-gapi-adapter.js',
+		'GSAdapter': 'libs/ember-gapi-adapter/ember-gapi-adapter',
 		'GSModels': 'libs/ember-gapi-adapter/models',
 		'bootstrap': 'libs/bootstrap/2.3.2/js/bootstrap',
 		'moment': 'libs/moment/min/moment.min',

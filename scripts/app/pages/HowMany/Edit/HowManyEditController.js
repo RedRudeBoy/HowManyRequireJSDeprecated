@@ -1,14 +1,13 @@
 define(["ember"], function(Ember){
-	var HowManysController = Ember.ArrayController.extend({
+	var HowManyEditController = Ember.ObjectController.extend({
+//		fackingTest: "yeahmen!"
 //		sortProperties: ['name', 'artist'],
 //		sortAscending: true // false for descending
-		
-//		itemController: 'howMany',
-//		childrenLength: 0
+
 //		childrenLength: function() {
-//			console.log(this);
-//			return this.length;
+//			return this.get('childrens').length;
 //		}.property('childrens')
+//		childrenLength: 5
 	});
-	return HowManysController;
+	return HowManyEditController;
 });

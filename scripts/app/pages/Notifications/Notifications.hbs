@@ -1,6 +1,16 @@
 <div class="row">
 	<div class="span12">
 		<ul class="unstyled">
+			{{#each}}
+				<li>
+					<span>{{{message}}}</span>
+					<span class="pull-right">{{dateFromNow}}</span>
+				</li>
+				<hr />
+				{{!--#if isTaskInvitation}}
+					yeah!
+				{{/if--}}
+			{{/each}}
 			<hr />
 			<li style="background-color: red;min-height: 40px;z-index: 1;"></li>
 			<li style="min-height: 40px;position: relative;top: -40px;z-index: 2;float: left;width: 100%;line-height: 40px;">

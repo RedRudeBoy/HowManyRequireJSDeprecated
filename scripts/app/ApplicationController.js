@@ -1,5 +1,5 @@
 define(["ember"], function(Ember){
-	var ApplicationController = Ember.Controller.extend({
+	var ApplicationController = Ember.ObjectController.extend({
 		currentPathDidChange: function() {
 			Ember.Logger.log('path changed: '+this.get('currentPath'));
 //			var required = 'pages/'+this.get('currentPath')+'/'+this.get('currentPath')+'View';

@@ -6,7 +6,7 @@ define([
  * Stores
  */
 	"DS",
-//	"LS",
+	"LS",
 //	"GSAdapter",
 
 /**
@@ -21,8 +21,12 @@ define([
 /**
  * Models
  */
-	"models/DSModels/TagDSModel",
+	"models/DSModels/WizardQuestionDSModel",
+	"models/DSModels/WizardAnswerDSModel",
 	"models/DSModels/UserConfigurationDSModel",
+	"models/DSModels/TagDSModel",
+	"models/DSModels/NotificationDSModel",
+	"models/DSModels/MessageDSModel",
 	"models/DSModels/HowManyDSModel",
 	"GSModels/Calendar",
 //	"GSModels/CalendarList",
@@ -31,6 +35,7 @@ define([
 //	"GSModels/Drive",
 	"GSModels/Event",
 //	"GSModels/Events",
+	"GSModels/File",
 	"GSModels/Task",
 
 /**
@@ -42,10 +47,13 @@ define([
 	
 	//HowMany
 	"pages/HowMany/Done/HowManyDoneView",
+	"pages/HowMany/Edit/HowManyEditController",
 	"pages/HowMany/Edit/HowManyEditRoute",
+	"pages/HowMany/Edit/HowManyEditSatisfactionView",
 	"pages/HowMany/Edit/HowManyEditView",
-	"pages/HowMany/Index/HowManyIndexView",
 	"pages/HowMany/Index/HowManyIndexNowBtnView",
+	"pages/HowMany/Index/HowManyIndexRoute",
+	"pages/HowMany/Index/HowManyIndexView",
 	"pages/HowMany/Planner/HowManyPlannerView",
 	"pages/HowMany/Planning/HowManyPlanningRoute",
 	"pages/HowMany/Planning/HowManyPlanningView",
@@ -56,14 +64,14 @@ define([
 //	"pages/HowManys/HowManysController",
 //	"pages/HowManys/HowManysRoute",
 	"pages/HowManys/HowManysView",
-//	"pages/HowManys/BigIcons/HowManysBigIconsController",
+	"pages/HowManys/BigIcons/HowManysBigIconsController",
 //	"pages/HowManys/BigIcons/HowManysBigIconsItemController",
 //	"pages/HowManys/BigIcons/HowManysBigIconsItemView",
 	"pages/HowManys/BigIcons/HowManysBigIconsRoute",
 	"pages/HowManys/BigIcons/HowManysBigIconsView",
 	"pages/HowManys/History/HowManysHistoryView",
 	"pages/HowManys/Index/HowManysIndexRoute",
-//	"pages/HowManys/List/HowManysListRoute",
+	"pages/HowManys/List/HowManysListRoute",
 	"pages/HowManys/List/HowManysListView",
 	"pages/HowManys/Toolbar/HowManysToolbarView",
 	"pages/HowManys/Users/HowManysUsersView",
@@ -72,6 +80,7 @@ define([
 	"pages/Login/LoginView",
 	"pages/Login/DoLoginView",
 	"pages/Navbar/NavbarView",
+	"pages/Notifications/NotificationsRoute",
 	"pages/Notifications/NotificationsView",
 	"pages/Report/ReportView",
 	"pages/Wizard/WizardRoute",
@@ -86,7 +95,7 @@ define([
 ], function(
 	//Stores
 	DS,
-//	LS,
+	LS,
 //	GSAdapter,
 //	
 	//Application
@@ -95,8 +104,12 @@ define([
 	IndexRoute, Router,
 
 	//Models
-	TagDSModel,
+	WizardQuestionDSModel,
+	WizardAnswerDSModel,
 	UserConfigurationDSModel,
+	TagDSModel,
+	NotificationDSModel,
+	MessageDSModel,
 	HowManyDSModel,
 	Calendar,
 //	CalendarList,
@@ -105,6 +118,7 @@ define([
 //	Drive,
 	Event,
 //	Events,
+	File,
 	Task,
 
 	//Pages
@@ -112,7 +126,14 @@ define([
 	ConfigurationRoute,
 	CreditsView,
 	
-	HowManyDoneView,HowManyEditRoute,HowManyEditView,HowManyIndexView,HowManyIndexNowBtnView,
+	HowManyDoneView,
+	HowManyEditController,
+	HowManyEditRoute,
+	HowManyEditSatisfactionView,
+	HowManyEditView,
+	HowManyIndexNowBtnView,
+	HowManyIndexRoute,
+	HowManyIndexView,
 	HowManyPlannerView,
 	HowManyPlanningRoute,
 	HowManyPlanningView,
@@ -123,12 +144,12 @@ define([
 //	HowManysRoute,
 	HowManysView,
 	
-//	HowManysBigIconsController,
+	HowManysBigIconsController,
 //	HowManysBigIconsItemController,HowManysBigIconsItemView,
 	HowManysBigIconsRoute,HowManysBigIconsView,
 	HowManysHistoryView,
 	HowManysIndexRoute,
-//	HowManysListRoute,
+	HowManysListRoute,
 	HowManysListView,
 	HowManysToolbarView,
 	HowManysUsersView,
@@ -136,6 +157,7 @@ define([
 	
 	LoginView, DoLoginView,
 	NavbarView,
+	NotificationsRoute,
 	NotificationsView,
 	ReportView,
 	WizardRoute,
@@ -157,7 +179,9 @@ define([
  * Stores: DS, LS & GSAdapter
  */
 		ApplicationAdapter: DS.FixtureAdapter.extend(),
-		
+//		ApplicationAdapter: DS.LSAdapter.extend({
+//		  namespace: 'HM'
+//		}),
 /**
  * Application
  */
@@ -170,8 +194,12 @@ define([
 /**
  * Models
  */
-		Tag: TagDSModel,
+		WizardQuestion: WizardQuestionDSModel,
+		WizardAnswer: WizardAnswerDSModel,
 		UserConfiguration: UserConfigurationDSModel,
+		Tag: TagDSModel,
+		Notification: NotificationDSModel,
+		Message: MessageDSModel,
 		HowMany: HowManyDSModel,
 		Calendar: Calendar,
 //		CalendarList: CalendarList,
@@ -180,6 +208,7 @@ define([
 //		Drive: Drive,
 		Event: Event,
 //		Events: Events,
+		File: File,
 		Task: Task,
 
 		ConfigurationView: ConfigurationView,
@@ -190,10 +219,13 @@ define([
  * Pages
  */
 		HowManyDoneView: HowManyDoneView,
+		HowManyEditController: HowManyEditController,
 		HowManyEditRoute: HowManyEditRoute,
+		HowManyEditSatisfactionView: HowManyEditSatisfactionView,
 		HowManyEditView: HowManyEditView,
-		HowManyIndexView: HowManyIndexView,
 		HowManyIndexNowBtnView : HowManyIndexNowBtnView,
+		HowManyIndexRoute: HowManyIndexRoute,
+		HowManyIndexView: HowManyIndexView,
 		HowManyPlannerView: HowManyPlannerView,
 		HowManyPlanningRoute: HowManyPlanningRoute,
 		HowManyPlanningView: HowManyPlanningView,
@@ -204,14 +236,14 @@ define([
 //		HowManysRoute: HowManysRoute,
 		HowManysView: HowManysView,
 
-//		HowManysBigIconsController: HowManysBigIconsController,
+		HowManysBigIconsController: HowManysBigIconsController,
 //		HowManysBigIconsItemController: HowManysBigIconsItemController,
 //		HowManysBigIconsItemView: HowManysBigIconsItemView,
 		HowManysBigIconsRoute: HowManysBigIconsRoute,
 		HowManysBigIconsView: HowManysBigIconsView,
 		HowManysHistoryView: HowManysHistoryView,
 		HowManysIndexRoute: HowManysIndexRoute,
-//		HowManysListRoute: HowManysListRoute,
+		HowManysListRoute: HowManysListRoute,
 		HowManysListView: HowManysListView,
 		HowManysToolbarView: HowManysToolbarView,
 		HowManysUsersView: HowManysUsersView,
@@ -219,6 +251,7 @@ define([
 
 		LoginView: LoginView, DoLoginView: DoLoginView,
 		NavbarView: NavbarView,
+		NotificationsRoute: NotificationsRoute,
 		NotificationsView: NotificationsView,
 		ReportView: ReportView,
 		WizardRoute: WizardRoute,

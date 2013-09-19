@@ -16,3 +16,6 @@
 [submodule "scripts/libs/ember-handlebars-helpers"]
 	path = scripts/libs/ember-handlebars-helpers
 	url = https://github.com/RedRudeBoy/Ember-Handlebars-Helpers.git
+[submodule "scripts/libs/ember-gapi-adapter"]
+	path = scripts/libs/ember-gapi-adapter
+	url = https://github.com/RedRudeBoy/ember-gapi-adapter.git

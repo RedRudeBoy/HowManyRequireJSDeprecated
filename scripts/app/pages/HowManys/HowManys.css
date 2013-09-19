@@ -1,9 +1,19 @@
 /** HowManysToolbar **/
-.btn-toolbar-views > * {
-	width: 18%; /*23?*/
+.how-manys-toolbar-views-btn-group > * {
+	width: 16%; /*18?23?*/
 }
-.btn-toolbar-filters > * {
-	width: 23%;
+.how-manys-toolbar-filters-btn-group > * {
+	width: 13%; /*23?*/
+}
+@media (max-width: 767px) {
+	.how-manys-toolbar-filters {
+		position: relative;
+		top: 40px;
+	}
+	.how-manys-toolbar-new{
+		position: relative;
+		top: -80px;
+	}
 }
 
 /** HowManysBigIcons **/

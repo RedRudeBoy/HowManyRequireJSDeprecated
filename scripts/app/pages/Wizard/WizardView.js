@@ -1,4 +1,10 @@
-define(["ember","text!./Wizard.hbs","css!./Wizard"/*,"css!libs/fuelux/dist/css/fuelux","css!libs/fuelux/dist/css/fuelux-responsive","libs/fuelux/dist/wizard"*/], function(Ember,Template) {
+define( /*,"css!libs/fuelux/dist/css/fuelux","css!libs/fuelux/dist/css/fuelux-responsive","libs/fuelux/dist/wizard"*/
+["ember","text!./Wizard.hbs","text!./WizardComponent.hbs","css!./Wizard"],
+function(Ember,Template,Component,css) {
+	
+	var compiled = Ember.Handlebars.compile(Component);
+	Ember.TEMPLATES["components/wizard-component"] = compiled;
+	
 	var WizardView = Ember.View.extend({
 //		templateName: 'Wizard',
 		defaultTemplate: Ember.Handlebars.compile(Template),

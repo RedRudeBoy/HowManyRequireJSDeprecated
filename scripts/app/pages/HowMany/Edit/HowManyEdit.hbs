@@ -46,6 +46,32 @@
 <!--			<small>Description:</small><br />
 				<input class="media-description" value="Aprendràs molt!"  type="text" /><br /><!--h5-->
 			</div>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<p>Events: {{events}}</p>
+			<p>Events Length: {{events.length}}</p>
+			{{#each events}}
+				<p>name: {{summary}}</p>
+			{{else}}
+				<p>Without Events</p>
+			{{/each}}
+			<br />
+			<p>Radio test</p>
+			<p>1: {{view App.HowManyEditSatisfactionView name="selectionTest" selectionBinding="satisfying" value="1"}}</p>
+			<p>2: {{view App.HowManyEditSatisfactionView name="selectionTest" selectionBinding="satisfying" value="2"}}</p>
+			<p>3: {{view App.HowManyEditSatisfactionView name="selectionTest" selectionBinding="satisfying" value="3"}}</p>
+			<p>4: {{view App.HowManyEditSatisfactionView name="selectionTest" selectionBinding="satisfying" value="4"}}</p>
+			<p>5: {{view App.HowManyEditSatisfactionView name="selectionTest" selectionBinding="satisfying" value="5"}}</p>
+			<p>satisfying: {{satisfying}}</p>
+			{{#if view.isVeryDifficult}}
+			<p>Es moolt dificil!</p>
+			{{else}}
+			<p>no es pa tanto</p>
+			{{/if}}
+			<br />
 		</div>
 	</div>
 
@@ -113,18 +139,12 @@
 		<div class="row-fluid">
 			<p class="span12">Shared with:</p>
 			<br />
-			<div class="span2"><a class="btn btn-block" data-toggle="modal" href="#removeUserModal" role="button">
-				<span class="icon-stack icon-3x"><i class="icon-user icon-stack-base"></i><i class="icon-ban-circle text-error"></i></span>
-				<br />Mihoko
-			</a></div>
-			<div class="span2"><a class="btn btn-block" data-toggle="modal" href="#removeUserModal" role="button">
-				<span class="icon-stack icon-3x"><i class="icon-user icon-stack-base"></i><i class="icon-ban-circle text-error"></i></span>
-				<br />Joana
-			</a></div>
-			<div class="span2"><a class="btn btn-block" data-toggle="modal" href="#removeUserModal" role="button">
-				<span class="icon-stack icon-3x"><i class="icon-user icon-stack-base"></i><i class="icon-ban-circle text-error"></i></span>
-				<br />Nil
-			</a></div>
+			{{#each contacts}}
+				<div class="span4"><a class="btn btn-block" data-toggle="modal" href="#removeUserModal" role="button">
+					<span class="icon-stack icon-3x"><i class="icon-user icon-stack-base"></i><i class="icon-ban-circle text-error"></i></span>
+					<br />{{id}}{{!--computed propertie  domain without @gmail.com--}}
+				</a></div>
+			{{/each}}
 		</div>
 		<div id="removeUserModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="removeUserModalLabel" aria-hidden="true">
 			<div class="modal-header">
@@ -147,19 +167,19 @@
 			<p class="span12">Choose your difficulty / satisfying:</p>
 			<div class="row-fluid">
 				<div class="span2 offset1">
-					<a class="btn btn-block btn-very-easy"><i class="icon-star-empty icon-2x"></i><br />Very easy</a>
+					<a {{bind-attr class=":btn :btn-block :btn-very-easy view.isVeryEasy:active"}} {{action "veryEasy"}}><i class="icon-star-empty icon-2x"></i><br />Very easy</a>
 				</div>
 				<div class="span2">
-					<a class="btn btn-block btn-easy"><i class="icon-star-empty"></i><br />Easy</a>
+					<a {{bind-attr class=":btn :btn-block :btn-easy view.isEasy:active"}} {{action "easy"}}><i class="icon-star-empty"></i><br />Easy</a>
 				</div>
 				<div class="span2">
-					<a class="btn btn-block btn-medium"><i class="icon-star-half-empty icon-flip-horizontal"></i><br />Medium</a>
+					<a {{bind-attr class=":btn :btn-block :btn-medium view.isMedium:active"}} {{action "medium"}}><i class="icon-star-half-empty icon-flip-horizontal"></i><br />Medium</a>
 				</div>
 				<div class="span2">
-					<a class="btn btn-block btn-difficult"><i class="icon-star"></i><br />Difficult</a>
+					<a {{bind-attr class=":btn :btn-block :btn-difficult view.isDifficult:active"}} {{action "difficult"}}><i class="icon-star"></i><br />Difficult</a>
 				</div>
 				<div class="span2">
-					<a class="btn btn-block btn-very-difficult"><i class="icon-star icon-2x"></i><br />Very Difficult</a>
+					<a {{bind-attr class=":btn :btn-block :btn-very-difficult view.isVeryDifficult:active"}} {{action "veryDifficult"}}><i class="icon-star icon-2x"></i><br />Very Difficult</a>
 				</div>
 			</div>
 		</div>
@@ -169,7 +189,7 @@
 			<center class="span12 btn-group" style="background-color: #eee;">
 				<h5 class="span1 text-center">It's</h5>
 				<h5 class="span3 text-center">Blabla</h5>
-				<h5 class="span5 text-center">Once</h5>
+				<h5 class="span5 text-center">Once every</h5>
 				<h5 class="span3 text-center">Alarms</h5>
 			</center>
 			<center class="span12 btn-group" style="background-color: #A9F5BC; padding: 10px;">
@@ -195,10 +215,10 @@
 					</ul>
 				</div>
 				<div class="btn-group span5">
-					<button class="btn" data-toggle="button">a year</button>
-					<button class="btn" data-toggle="button">every 9 months</button>
-					<button class="btn" data-toggle="button">every 6 months</button>
-					<button class="btn" data-toggle="button">every 3 months</button>
+					<button class="btn" data-toggle="button">year</button>
+					<button class="btn" data-toggle="button">9 months</button>
+					<button class="btn" data-toggle="button">6 months</button>
+					<button class="btn" data-toggle="button">3 months</button>
 				</div>
 				<div class="btn-group span3">
 					<button class="btn" data-toggle="button"><i class="icon-envelope-alt"></i></button>
@@ -228,10 +248,10 @@
 					</ul>
 				</div>
 				<div class="btn-group span5">
-					<button class="btn" data-toggle="button">a month</button>
-					<button class="btn" data-toggle="button">every 3 weeks</button>
-					<button class="btn" data-toggle="button">every 2 weeks</button>
-					<button class="btn" data-toggle="button">every week</button>
+					<button class="btn" data-toggle="button">month</button>
+					<button class="btn" data-toggle="button">3 weeks</button>
+					<button class="btn" data-toggle="button">2 weeks</button>
+					<button class="btn" data-toggle="button">week</button>
 				</div>
 				<div class="btn-group span3">
 					<button class="btn" data-toggle="button"><i class="icon-envelope-alt"></i></button>
@@ -334,10 +354,10 @@
 					</ul>
 				</div>
 				<div class="btn-group span5">
-					<button class="btn" data-toggle="button">a year</button>
-					<button class="btn" data-toggle="button">every 9 months</button>
-					<button class="btn" data-toggle="button">every 6 months</button>
-					<button class="btn" data-toggle="button">every 3 months</button>
+					<button class="btn" data-toggle="button">year</button>
+					<button class="btn" data-toggle="button">9 months</button>
+					<button class="btn" data-toggle="button">6 months</button>
+					<button class="btn" data-toggle="button">3 months</button>
 				</div>
 				<div class="btn-group span3">
 					<button class="btn" data-toggle="button"><i class="icon-envelope-alt"></i></button>

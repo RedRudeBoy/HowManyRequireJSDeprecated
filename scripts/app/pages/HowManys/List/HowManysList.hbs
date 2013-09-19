@@ -1,8 +1,23 @@
 <!-- HowManysList::start -->
+<p>Model: {{model}}</p>
 <div id="HMList" class="row">
 	<center class="span12">
 		<ul data-role="listview" data-split-icon="gear" data-split-theme="d" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
 			<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-a ui-li-has-count ui-first-child">ToDo Now! <span class="ui-li-count ui-btn-up-c ui-btn-corner-all">2</span></li>
+			{{#each}}
+			<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-alt ui-li-has-thumb ui-li ui-btn-up-c">
+				<div class="ui-btn-inner ui-li ui-li-has-alt"><div class="ui-btn-text"><a href="#/HowMany" class="ui-link-inherit">
+					<h1 class="ui-li-aside ui-li-desc"><strong>{{lastDone}}</strong> Days</h1S>
+					{{!--image}}
+					{{image.id}}
+					{{image.thumbnailLink--}}
+					<img {{bind-attr src="image.thumbnailLink"}} class="ui-li-thumb img-rounded">
+					<h2 class="ui-li-heading" style="line-height:20px;">{{task.title}}</h2>
+					<p class="ui-li-desc">Id: {{id}}</p>
+				</a></div></div>
+				<a href="#/HowMany/edit" data-rel="popup" data-position-to="window" data-transition="pop" title="Edit" class="ui-li-link-alt ui-btn ui-btn-icon-notext ui-btn-up-c" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="false" data-iconpos="notext" data-theme="c" aria-haspopup="true" aria-owns="purchase" aria-expanded="false"><span class="ui-btn-inner"><span class="ui-btn-text"></span><span data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="gear" data-iconpos="notext" data-theme="d" title="" class="ui-btn ui-btn-up-d ui-shadow ui-btn-corner-all ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text"></span><span class="ui-icon ui-icon-gear ui-icon-shadow">&nbsp;</span></span></span></span></a>
+			</li>
+			{{/each}}
 			<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-li-has-alt ui-li-has-thumb ui-li ui-btn-up-c">
 				<div class="ui-btn-inner ui-li ui-li-has-alt"><div class="ui-btn-text"><a href="#/HowMany" class="ui-link-inherit">
 					<p class="ui-li-aside ui-li-desc"><strong>5</strong> Days</p>

@@ -1,7 +1,29 @@
 define(["ember","text!./HowManyEdit.hbs","css!./HowManyEdit","libs/fuelux/dist/combobox"/*,"css!libs/fuelux/dist/css/fuelux","css!libs/fuelux/dist/css/fuelux-responsive"*/], function(Ember,Template) {
+
+//	var compiled = Ember.Handlebars.compile(Template);
+//	Ember.TEMPLATES["HowManyEdit"] = compiled;
+	
 	var HowManyEdit = Ember.View.extend({
 //		templateName: 'HowManyEdit',
 		defaultTemplate: Ember.Handlebars.compile(Template),
+		isVeryEasy: function() {
+			return (this.get('context').get('satisfying') == 1);
+		}.property('context.satisfying'),
+		isEasy: function() {
+			return (this.get('context').get('satisfying') == 2);
+		}.property('context.satisfying'),
+		isMedium: function() {
+			return (this.get('context').get('satisfying') == 3);
+		}.property('context.satisfying'),
+		isDifficult: function() {
+			return (this.get('context').get('satisfying') == 4);
+		}.property('context.satisfying'),
+		isVeryDifficult: function() {
+			return (this.get('context').get('satisfying') == 5);
+		}.property('context.satisfying'),
+//		contactName: function() {
+//			return (this.get('context').get('contacts').toString()); //MEC
+//		}.property('context.contacts'),
 		didInsertElement: function() {
 //			Ember.Logger.log('inserted!',this,this.$());
 			var selfView = this;
@@ -25,9 +47,6 @@ define(["ember","text!./HowManyEdit.hbs","css!./HowManyEdit","libs/fuelux/dist/c
 				e.target.setAttribute("r", dr);
 //				Ember.Logger.log($(el),parentOffset,center,mouse,d);
 			});
-		},
-		imgChange: function(e) {
-			alert(e);
 		}
 	});
 	return HowManyEdit;

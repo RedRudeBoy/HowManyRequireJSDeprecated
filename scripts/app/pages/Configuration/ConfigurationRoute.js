@@ -2,7 +2,6 @@ define(["ember"], function(Ember){
 	var ConfigurationRoute = Ember.Route.extend({
 		model: function() {
 			Ember.Logger.log('ConfigurationRoute recover model:',this.store.find('userConfiguration'));
-//			debugger;
 			return this.store.find('userConfiguration',1);
 		},
 		afterModel: function(model, transition) {

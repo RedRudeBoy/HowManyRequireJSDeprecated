@@ -40,6 +40,12 @@ define(["ember","text!./HowManysBigIcons.hbs"], function(Ember,Template) {
 //		tagName : 'div',
 		templateName: 'HowManysBigIcons',
 //		defaultClass: 'row',
+//		isSmall: function() {
+//			Ember.Logger.log('isSmall?',this.get('context').get('children'),this.get('context').get('children'));
+//			debugger;
+//			return this.get('context').get('children');
+////		}.property('context.children.length'),
+//		}.property(),
 		didInsertElement: function() {
 			Ember.Logger.log('inserted!',this,this.$());
 		},

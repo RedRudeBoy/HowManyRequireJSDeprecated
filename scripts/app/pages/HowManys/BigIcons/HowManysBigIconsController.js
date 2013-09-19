@@ -3,6 +3,13 @@ define(["ember"], function(Ember){
 //		info: ['Coed', 'Saturdays from 9AM-3PM', 'at Park Center']
 //		sortProperties: ['name', 'artist'],
 //		sortAscending: true // false for descending
+		isSmall: function() {
+//			debugger;
+//			Ember.Logger.log('isSmall?',this.get('context').get('children'),this.get('context').get('children'));
+//			return this.get('context').get('children');
+			return true;
+//		}.property('context.children.length'),
+		}.property()
 	});
 	return HowManysBigIconsController;
 });

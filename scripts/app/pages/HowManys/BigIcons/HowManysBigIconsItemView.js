@@ -1,14 +1,23 @@
 define(["ember","text!./HowManysBigIconsItem.hbs"], function(Ember,Template) {
-	var compiled = Ember.Handlebars.compile(Template);
-	Ember.TEMPLATES["HowManysBigIconsItem"] = compiled;
+//	var compiled = Ember.Handlebars.compile(Template);
+//	Ember.TEMPLATES["HowManysBigIconsItem"] = compiled;
 	
-//	var HowManysBigIconsItemView = Ember.View.extend({
-	var HowManysBigIconsItemView = Ember.ContainerView.extend({
-		name: 'HowManysBigIconsItemView',
-		templateName: 'HowManysBigIconsItem',
+	var HowManysBigIconsItemView = Ember.View.extend({
+//	var HowManysBigIconsItemView = Ember.ContainerView.extend({
+//		name: 'HowManysBigIconsItemView',
+//		templateName: 'HowManysBigIconsItem',
 //		layoutName: 'HMListTags'
 //		defaultTemplate: Ember.Handlebars.compile(Template)
-		defaultClass: 'spanItemView'
+//		defaultClass: 'spanItemView'
+		offset: function() {
+			if(this.get('contentIndex') == 0) {
+				var numBrothers = this.get('content').get('parent').get('children').get('length');
+				if(numBrothers > 4)			return false;
+				else if(numBrothers > 2)	return 'offset2';
+				else						return 'offset1';
+			}
+			return false;
+		}.property('contentIndex')
 	});
 	return HowManysBigIconsItemView;
 });

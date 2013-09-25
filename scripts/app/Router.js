@@ -19,8 +19,10 @@ define(["ember"], function(Ember){
 //		this.resource('HowMany', { path: '/HowMany/:id' }, function() {
 		this.resource('HowMany', function() {
 									//HowManyIndex - HMView
-			this.route('edit');				//HowManyEdit - HMCRUD
-//			this.route('edit', { path: "edit/:id" });				//HowManyEdit - HMCRUD
+//			this.route('edit');				//HowManyEdit - HMCRUD
+			this.route('new');				//HowManyEdit - HMCRUD
+//			this.route('edit', { queryParams: ['id']});				//HowManyEdit - HMCRUD
+			this.route('edit', { path: "edit/:id" });				//HowManyEdit - HMCRUD
 			this.route('done');				//HowManyDone - HMDone
 			this.route('planner');
 			this.route('planning');

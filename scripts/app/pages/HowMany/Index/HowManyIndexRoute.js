@@ -12,6 +12,7 @@ define(["ember"], function(Ember){
 			},
 			createHowMany: function() {
 				Ember.debug('Start create New HowMany');
+				debugger;
 //				// Get the todo title set by the "New Todo" text field
 ////				var title = this.get('newTitle');
 ////				if (!title.trim()) {

@@ -39,8 +39,15 @@ define({
 		'jquery': 'libs/jquery/1.9.1/jquery',
 		'handlebars': 'libs/handlebars/1.0.0/handlebars',
 		'handlebars-helpers': 'libs/ember-handlebars-helpers/ember-handlebars-helpers',
-		'ember': 'libs/ember/1.0.0/ember',
-		'DS': 'libs/ember-data/1.0.0-beta.2/ember-data',
+		'ember': [
+//			'//builds.emberjs.com/release/ember',
+//			'libs/ember/1.0.0/ember'
+			'libs/ember/1.1.0-beta.1/ember'
+		],
+		'DS': [
+//			'//builds.emberjs.com/beta/ember-data',
+			'libs/ember-data/1.0.0-beta.2/ember-data'
+		],
 		'LS': 'libs/ember-localstorage-adapter/localstorage_adapter',
 		'GS': 'libs/ember-gapi-adapter',
 		'GSAdapter': 'libs/ember-gapi-adapter/ember-gapi-adapter',

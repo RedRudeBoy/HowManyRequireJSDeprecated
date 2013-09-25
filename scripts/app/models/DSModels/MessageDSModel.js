@@ -1,9 +1,12 @@
-define(["DS"], function(DS){
+define(["DS",'moment','momentlangs'], function(DS){
 
 var Message = DS.Model.extend({
     contact: DS.belongsTo('Contact')
   , created: DS.attr('date')
   , msg: DS.attr('string')
+  , dateFromNow: function() {
+		return moment(this.get('created')).fromNow();
+	}.property('created')
 });
 
 Message.FIXTURES =

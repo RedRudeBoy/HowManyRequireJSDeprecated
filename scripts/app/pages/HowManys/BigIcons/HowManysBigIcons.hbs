@@ -1,18 +1,13 @@
-<div id="HowManysBigIcons">
-{{#if isSmall}}
-<h1>Es petit!</h1>
-{{else}}
-<h1>no es pa tanto</h1>
-{{/if}}
+<div id="HowManysBigIcons" class="row">
 
-{{#each}}
+{{#each itemController="howManysBigIconsItem"}}
 	{{#unless parent}}
-		<div class="row">
+		<div  {{action "imgChange"}} {{bind-attr class="smallParent:span6:span12"}}>
 			<button type="button" class="btn btn-block" data-toggle="collapse" data-target="#HowManysBigIcons{{unbound name}}">{{unbound name}}</button>
 
 			<div class="row collapse in" id="HowManysBigIcons{{unbound name}}">
-			{{#each children}}
-				<div class="span2">
+			{{#each children itemViewClass="App.HowManysBigIconsItemView"}}
+				<div {{bind-attr class=":span2 view.offset"}}>
 					{{#linkTo 'HowManys.index' classNames="btn btn-block"}}
 						{{#if icon}}<i class="icon-{{unbound icon}} icon-2x"></i> <br />{{/if}}
 						{{{unbound name}}}
@@ -21,10 +16,12 @@
 			{{/each}}
 			</div>
 		</div>
-		<br />
 	{{/unless}}
 {{/each}}
 
-	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</div>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<div class="row">
 	<div class="row space"><div class="span12"><h1><a href="http://fortawesome.github.io/Font-Awesome/icons/" target"_blank">Tots els icones i molts més són d'aquí</a></h1></div></div>
 </div>

@@ -1,11 +1,11 @@
 define(["ember","text!./HowManyEdit.hbs","css!./HowManyEdit","libs/fuelux/dist/combobox"/*,"css!libs/fuelux/dist/css/fuelux","css!libs/fuelux/dist/css/fuelux-responsive"*/], function(Ember,Template) {
 
-//	var compiled = Ember.Handlebars.compile(Template);
-//	Ember.TEMPLATES["HowManyEdit"] = compiled;
+	var compiled = Ember.Handlebars.compile(Template);
+	Ember.TEMPLATES["HowManyEdit"] = compiled;
 	
 	var HowManyEdit = Ember.View.extend({
-//		templateName: 'HowManyEdit',
-		defaultTemplate: Ember.Handlebars.compile(Template),
+		templateName: 'HowManyEdit',
+//		defaultTemplate: Ember.Handlebars.compile(Template),
 		isVeryEasy: function() {
 			return (this.get('context').get('satisfying') == 1);
 		}.property('context.satisfying'),

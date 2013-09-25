@@ -58,3 +58,11 @@
 #HowManysBigIcons .collapse {
 	margin-top: 6px;
 }
+
+#HowManysBigIcons > div {
+	margin-top: 20px;
+}
+
+/*#HowManysBigIcons > div > .row.collapse:first-child {
+    margin-left: 0;
+ }*/

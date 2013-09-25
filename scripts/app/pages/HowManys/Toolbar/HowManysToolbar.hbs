@@ -18,7 +18,8 @@
 		</center>
 	</div>
 	<div class="span2 how-manys-toolbar-new">
-		{{#linkTo 'HowMany.edit' classNames="btn btn-block"}}<i class="icon-plus"></i><br />New How Many{{/linkTo}}
+		<div class="btn btn-block" {{action "createHowMany"}}><i class="icon-plus"></i><br />New How Many</div>
+		{{!--#linkTo 'HowMany.edit' classNames="btn btn-block"}}<i class="icon-plus"></i><br />New How Many{{/linkTo--}}
 	</div>
 	<div class="span5 how-manys-toolbar-views" style="background-color: #eee">
 		<div class="row">

@@ -40,7 +40,7 @@
 				<div class="well">
 					<dl><!--class="dl-horizontal"-->
 					{{#each wall}}
-						<dt>{{contact.id}} <small class="pull-right">{{created}}</small></dt>
+						<dt>{{contact.id}} <small class="pull-right">{{dateFromNow}}</small></dt>
 						<dd>{{msg}}</dd>
 					{{/each}}
 					</dl>
@@ -50,7 +50,9 @@
 							<!--<textarea  class="span6" rows="3" placeholder="Notes"></textarea>-->
 						</div>
 						<button type="submit" class="btn span2" {{action "sendmessage"}}>Send</button>
-						<button type="submit" class="btn span2"{{action "createHowMany"}}>Create How Many</button>
+					</div>
+					<div class="row-fluid">
+						<button type="submit" class="btn btn-block span12" {{action "createHowMany"}}>Create How Many</button>
 					</div>
 				</div>
 			</div>

@@ -15,15 +15,16 @@ define(["ember"], function(Ember){
 		 * @ToDo:
 		 *	Routing with id & extra params
 		 */
-//		this.route('HowManyNew', { path: '/HowMany/' });	//new HMCRUD - HowManyNew
-//		this.resource('HowMany', { path: '/HowMany/:id' }, function() {
-		this.resource('HowMany', function() {
-									//HowManyIndex - HMView
-//			this.route('edit');				//HowManyEdit - HMCRUD
-			this.route('new');				//HowManyEdit - HMCRUD
-//			this.route('edit', { queryParams: ['id']});				//HowManyEdit - HMCRUD
-			this.route('edit', { path: "edit/:id" });				//HowManyEdit - HMCRUD
-			this.route('done');				//HowManyDone - HMDone
+		this.route('HowManyNew', { path: '/HowMany/new' });	//new HMCRUD - HowManyNew
+		this.resource('HowMany', { path: '/HowMany/:id' }, function() {
+//		this.resource('HowMany', function() {
+															//HowManyIndex - HMView
+//			this.route('new');
+//			this.route('new', { path: "/HowMany/new" });
+			this.route('edit');								//HowManyEdit - HMCRUD
+//			this.route('edit', { queryParams: ['id']});		//HowManyEdit - HMCRUD
+//			this.route('edit', { path: "edit/:id" });		//HowManyEdit - HMCRUD
+			this.route('done');								//HowManyDone - HMDone
 			this.route('planner');
 			this.route('planning');
 		});

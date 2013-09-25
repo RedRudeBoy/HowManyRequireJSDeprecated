@@ -87,5 +87,5 @@ define({
 			location: 'require-less',
 			main: 'less'
 		}
-	],
+	]
 });

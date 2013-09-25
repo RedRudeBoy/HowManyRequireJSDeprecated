@@ -1,10 +1,10 @@
 define(["ember"], function(Ember){
 	var HowManyEditRoute = Ember.Route.extend({
 		model: function(params) {
-//			Ember.Logger.log('Recover model:',this.modelFor('HowMany'));
-//			return this.modelFor('HowMany');
-			Ember.Logger.log('HowManyRoute recover model:',params.id,this.store.find('howMany',params.id));
-			return this.store.find('HowMany',params.id); //Routing params & querys
+			Ember.Logger.log('Recover model:',this.modelFor('HowMany'));
+			return this.modelFor('HowMany');
+//			Ember.Logger.log('HowManyRoute recover model:',params.id,this.store.find('howMany',params.id));
+//			return this.store.find('HowMany',params.id); //Routing params & querys
 		}
 		,actions: {
 			imgChange: function() {

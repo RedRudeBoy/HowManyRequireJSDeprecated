@@ -1,40 +1,22 @@
 define(["ember"], function(Ember){
-	var HowManyNewRoute = Ember.Route.extend({
+	var HowManyDoneRoute = Ember.Route.extend({
 		model: function(params) {
-//			Ember.Logger.log('Recover model:',this.modelFor('HowMany'));
-//			return this.modelFor('HowMany');
+			/**
+			 * @ToDo:
+			 *	Routing with extra params
+			 */
+			Ember.Logger.log('Recover model:',this.modelFor('HowMany'));
+			return this.modelFor('HowMany');
 //			Ember.Logger.log('HowManyRoute recover model:',params.id,this.store.find('howMany',params.id));
 //			return this.store.find('HowMany',params.id); //Routing params & querys
-			Ember.Logger.log('HowManyNewRoute: Create New HowMany',arguments);
-			return this.store.createRecord('HowMany');
-		},
-		renderTemplate: function() {
-			Ember.Logger.log('HowManyNewRoute: renderTemplate',arguments);
-			this.render('HowManyEdit', {	// the template to render
-//				into: 'posts',				// the template to render into
-//				outlet: 'posts',			// the name of the outlet in that template
-//				controller: 'blogPost'		// the controller to use for the template
-			});
-		},
-//		actions: {
+		}
+//		,actions: {
 //			imgChange: function() {
 //				Ember.Logger.log('Change the image of the user');
 ////				this.currentModel.toJSON();
 //			},
 //			veryEasy: function() {
 //				this.get('context').set('satisfying',1);
-//			},
-//			easy: function() {
-//				this.get('context').set('satisfying',2);
-//			},
-//			medium: function() {
-//				this.get('context').set('satisfying',3);
-//			},
-//			difficult: function() {
-//				this.get('context').set('satisfying',4);
-//			},
-//			veryDifficult: function() {
-//				this.get('context').set('satisfying',5);
 //			},
 //			/** CRUD ACTIONS **/
 //			rollbackModel: function () { //Cancel
@@ -120,5 +102,5 @@ define(["ember"], function(Ember){
 //			controller.set('model', model);
 //		}
 	});
-	return HowManyNewRoute;
+	return HowManyDoneRoute;
 });

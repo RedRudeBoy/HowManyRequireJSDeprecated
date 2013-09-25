@@ -2,7 +2,7 @@ define(["ember"], function(Ember){
 	var HowManyController = Ember.ObjectController.extend({
 		actions: {
 			imgChange: function(e) {
-				alert(e);
+				alert('HowManyController imgChange alert: '+e);
 			}
 		}
 //		sortProperties: ['name', 'artist'],

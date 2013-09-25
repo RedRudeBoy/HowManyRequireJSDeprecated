@@ -54,7 +54,6 @@ define(["ember"], function(Ember){
 //				this.get('context').set('satisfying',1);
 //			}
 		}
-//		*
 //		afterModel: function(model, transition) {
 //			Ember.Logger.log('afterModel',model);
 //		},

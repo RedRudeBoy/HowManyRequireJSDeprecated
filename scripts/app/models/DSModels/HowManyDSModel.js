@@ -5,7 +5,8 @@ var HowMany = DS.Model.extend({
   , task: DS.belongsTo('Task')
   , events: DS.hasMany('Event', { async: true })//Why async??
   , contacts: DS.hasMany('Contact', { async: true })
-  , tags: DS.hasMany('Tag', { async: true })	//Why async??
+//  , tags: DS.hasMany('Tag', { async: true })	//Why async??
+  , tags: DS.hasMany('HowManyTag', { async: true })	//Why async??
   , satisfying: DS.attr('number',1)				//In task.notes json encoded??
   , wall: DS.hasMany('Message', { async: true })//In task.notes json encoded??
   , image: DS.belongsTo('File', { async: true })				//thumbnailLink selfLink alternateLink or embedLink
@@ -32,8 +33,8 @@ HowMany.FIXTURES =
 	],
 	tags: [2,3],
 	satisfying: 1,
-	wall: [1,2],
-//	image: '1Rzrs-eSKtbptjHctqbRt7UPzkRL0WlxHsC-A3i8vHyM'
+	wall: [1,2]
+//	image: "1Rzrs-eSKtbptjHctqbRt7UPzkRL0WlxHsC-A3i8vHyM"
 }];
 
 	return HowMany;

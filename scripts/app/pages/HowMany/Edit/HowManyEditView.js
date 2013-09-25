@@ -27,7 +27,9 @@ define(["ember","text!./HowManyEdit.hbs","css!./HowManyEdit","libs/fuelux/dist/c
 		didInsertElement: function() {
 //			Ember.Logger.log('inserted!',this,this.$());
 			var selfView = this;
+//			debugger;
 			this.$().find('.HowManyEditTag').each(function(key, el) {
+				Ember.Logger.log(el);
 				selfView.tagsBinder(el);
 			});
 		},
@@ -36,6 +38,7 @@ define(["ember","text!./HowManyEdit.hbs","css!./HowManyEdit","libs/fuelux/dist/c
 			 * @ToDo: touchmove
 			 */
 			$(el).bind('mousemove', function (e) {
+//				Ember.Logger.log(e);
 				var parentOffset = $(el).offset();
 				var center = { x: parentOffset.left + 150, y: parentOffset.top + 150 };
 //				var touch = { x: e.originalEvent.layerX, y: e.originalEvent.layerY }; //Not working
@@ -46,6 +49,7 @@ define(["ember","text!./HowManyEdit.hbs","css!./HowManyEdit","libs/fuelux/dist/c
 				if(dr < 20) dr = 20;
 				e.target.setAttribute("r", dr);
 //				Ember.Logger.log($(el),parentOffset,center,mouse,d);
+				Ember.Logger.log(dr);
 			});
 		}
 	});

@@ -140,10 +140,10 @@ Default media:
 
 
 #HowManyEditTags .HowManyEditTag {
-	width: 220px;height: 220px; background-color: #eee;
+	width: 220px;height: 250px; background-color: #eee;
 }
 #HowManyEditTags .HowManyEditTag p {
-	position: relative; top: -125px;left: 95px;
+	position: relative; top: -245px;left: 15px;
 }
 
 #HowManyEditPeriodicity .btn-very-easy {

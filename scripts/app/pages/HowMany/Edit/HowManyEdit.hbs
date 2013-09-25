@@ -76,22 +76,30 @@
 	</div>
 
 	<div class="tab-pane" id="HowManyEditTags">
-		<p>Tags: {{tags}}</p>
-		{{#each tags}}
-			<p>name: {{name}}</p>
-			{{!--#each children}}
-				<p>name: {{name}}</p>
-			{{/each--}}
-		{{else}}
-			<p>Without tags</p>
-		{{/each}}
+		{{!--<p>Tags: {{tags}}</p>--}}
 		<div class="row-fluid">
-			<div class="HowManyEditTag">
+			{{#each tags}}
+				{{#view App.HowManyEditTagView contentBinding="this"}}
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="220px" height="250px">
+						<!--<text x="0" y="15" fill="black">{{!--tag.name}}: {{importance--}}</text>-->
+						<circle id="circle" cx="110" cy="140" {{bind-attr r="importance"}} stroke="black" stroke-width="1" fill="lightgreen" />
+					</svg>
+					<p>{{tag.name}}: {{importance}}</p>
+				{{/view}}
+			{{else}}
+				<div class="span"><p>Without tags</p></div>
+			{{/each}}
+			{{!--
+			<br />
+			<br />
+			<br />
+			<div class="span HowManyEditTag">
 				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="220px" height="220px">
 					<circle id="circle" cx="110" cy="110" r="50" stroke="black" stroke-width="1" fill="lightgreen" />
 				</svg>
 				<p>Vice</p>
 			</div>
+			--}}
 		</div>
 		<br /><br />
 		<div class="row-fluid">

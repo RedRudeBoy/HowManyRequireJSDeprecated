@@ -12,10 +12,14 @@ define([
 /**
  * Application
  */
-	"app/ApplicationView",
 	"app/ApplicationController",
 //	"app/ApplicationRoute",
+	"app/ApplicationView",
+//	"app/FailureRoute",
+//	"app/FailureView",
 	"app/IndexRoute",
+	"app/LoadingRoute",
+	"app/LoadingView",
 	"app/Router",
 
 /**
@@ -27,6 +31,7 @@ define([
 	"models/DSModels/TagDSModel",
 	"models/DSModels/NotificationDSModel",
 	"models/DSModels/MessageDSModel",
+	"models/DSModels/HowManyTagDSModel",
 	"models/DSModels/HowManyDSModel",
 	"GSModels/Calendar",
 //	"GSModels/CalendarList",
@@ -46,10 +51,12 @@ define([
 	"pages/Credits/CreditsView",
 	
 	//HowMany
+	"pages/HowMany/Done/HowManyDoneRoute",
 	"pages/HowMany/Done/HowManyDoneView",
 	"pages/HowMany/Edit/HowManyEditController",
 	"pages/HowMany/Edit/HowManyEditRoute",
 	"pages/HowMany/Edit/HowManyEditSatisfactionView",
+	"pages/HowMany/Edit/HowManyEditTagView",
 	"pages/HowMany/Edit/HowManyEditView",
 	"pages/HowMany/Index/HowManyIndexNowBtnView",
 	"pages/HowMany/Index/HowManyIndexRoute",
@@ -100,9 +107,15 @@ define([
 //	GSAdapter,
 //	
 	//Application
-	ApplicationView, ApplicationController,
+	ApplicationController,
 //	ApplicationRoute,
-	IndexRoute, Router,
+	ApplicationView,
+//	FailureRoute,
+//	FailureView,
+	IndexRoute,
+	LoadingRoute,
+	LoadingView,
+	Router,
 
 	//Models
 	WizardQuestionDSModel,
@@ -111,6 +124,7 @@ define([
 	TagDSModel,
 	NotificationDSModel,
 	MessageDSModel,
+	HowManyTagDSModel,
 	HowManyDSModel,
 	Calendar,
 //	CalendarList,
@@ -127,10 +141,12 @@ define([
 	ConfigurationRoute,
 	CreditsView,
 	
+	HowManyDoneRoute,
 	HowManyDoneView,
 	HowManyEditController,
 	HowManyEditRoute,
 	HowManyEditSatisfactionView,
+	HowManyEditTagView,
 	HowManyEditView,
 	HowManyIndexNowBtnView,
 	HowManyIndexRoute,
@@ -188,10 +204,14 @@ define([
 /**
  * Application
  */
-		ApplicationView: ApplicationView,
 		ApplicationController: ApplicationController,
 //		ApplicationRoute: ApplicationRoute,
+		ApplicationView: ApplicationView,
+//		FailureRoute: FailureRoute,
+//		FailureView: FailureView,
 		IndexRoute: IndexRoute,
+		LoadingRoute: LoadingRoute,
+		LoadingView: LoadingView,
 		Router: Router,
 		
 /**
@@ -203,6 +223,7 @@ define([
 		Tag: TagDSModel,
 		Notification: NotificationDSModel,
 		Message: MessageDSModel,
+		HowManyTag: HowManyTagDSModel,
 		HowMany: HowManyDSModel,
 		Calendar: Calendar,
 //		CalendarList: CalendarList,
@@ -221,10 +242,12 @@ define([
 /**
  * Pages
  */
+		HowManyDoneRoute: HowManyDoneRoute,
 		HowManyDoneView: HowManyDoneView,
 		HowManyEditController: HowManyEditController,
 		HowManyEditRoute: HowManyEditRoute,
 		HowManyEditSatisfactionView: HowManyEditSatisfactionView,
+		HowManyEditTagView: HowManyEditTagView,
 		HowManyEditView: HowManyEditView,
 		HowManyIndexNowBtnView : HowManyIndexNowBtnView,
 		HowManyIndexRoute: HowManyIndexRoute,

@@ -16,6 +16,15 @@ var HowMany = DS.Model.extend({
 //  , lastDone: function() {
 //		return (this.get('context').get('satisfying') == 1);
 //	}.property('context.satisfying')
+//	, totalTagsImportance: function() {
+//		var tags = this.get('tags');
+//        var sum = tags.reduce(function(prevVal, item) {
+//            // prevVal is NaN for the first iteration
+//            return (prevVal || 0) + item.get('importance');
+//        });
+//        // if there are no numbers, sum is undefined
+//        return (sum || 0);
+//	}.property('tags.@each.importance')
 });
 
 HowMany.FIXTURES =

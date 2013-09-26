@@ -84,7 +84,7 @@
 						<!--<text x="0" y="15" fill="black">{{!--tag.name}}: {{importance--}}</text>-->
 						<circle id="circle" cx="110" cy="140" {{bind-attr r="importance"}} stroke="black" stroke-width="1" fill="lightgreen" />
 					</svg>
-					<p>{{tag.name}}: {{importance}}</p>
+					<p>{{tag.name}}: {{importance}} {{!--(view.maxImportance)--}}</p>
 				{{/view}}
 			{{else}}
 				<div class="span"><p>Without tags</p></div>

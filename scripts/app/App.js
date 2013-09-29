@@ -14,7 +14,6 @@ define([
 //		location: 'history'
 //		location: 'query'
 //	});
-//	});
 	// We can avoid auto-initialization of the app while we manage our dependencies.
 //	App.deferReadiness();
 	// Initialize all the classes

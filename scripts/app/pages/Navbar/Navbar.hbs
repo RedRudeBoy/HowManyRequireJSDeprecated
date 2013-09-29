@@ -1,29 +1,23 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container clearfix">
-			<!-- Mini-menu for small windows -->
-			<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-				<!-- Number of lines -->
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
 
 			{{#linkTo 'HowManys.index' classNames="brand"}}HowMany{{/linkTo}}
 
 			<!-- Always visible: HowMany Home & Notifications -->
 			<div class="btn-toolbar pull-left" id="NavbarToolbar">
 				<div class="btn-group">
-					{{#linkTo 'HowManys.BigIcons' classNames="btn"}}<i class="icon-th"></i> Categories{{/linkTo}}
+					{{#linkTo 'HowManys.BigIcons' classNames="btn"}}<i class="icon-th"></i><span class="hidden-phone"> Categories</span>{{/linkTo}}
 					<!--	other icon list: -list -th -th-list -th-large -align-justify -tasks -->
 					{{!--#linkTo 'HowManys.index' classNames="btn"}}<i class="icon-list"></i> List{{/linkTo--}}
 					{{#linkTo 'Notifications' classNames="btn"}}<i class="icon-info-sign"></i> <span class="badge badge-success">2</span>{{/linkTo}}
 				</div>
 			</div>
 
+			 {{!--<a class="brand">Noti: {{notifications}}</a>--}}
 
 			<!-- Menu collapsible: User Info, Conf, Report, Wizar & Credits -->
-			<div class="nav-collapse collapse" id="NavbarUserInfo">
+			<div id="NavbarUserInfo" class="hidden-phone">
 				<ul class="nav pull-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle clearfix" data-toggle="dropdown">
@@ -62,6 +56,23 @@
 					</li>
 				</ul>
 			</div>
+			
+			<!-- Mini-menu for small windows -->
+			<div id="NavbarMenuSmall" class="visible-phone" {{action "toggleMenu"}}>
+				<a class="btn btn-navbar">
+					<!-- Number of lines -->
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<!--<i class="icon-reorder"></i>-->
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
+<ul id="NavbarMenuSmallContent" class="nav nav-tabs nav-stacked">
+	<li>{{#linkTo 'Report'}}<i class="icon-tasks"></i> Report{{/linkTo}}</li>
+	<li>{{#linkTo 'Wizard'}}<i class="icon-magic"></i> Wizard{{/linkTo}}</li>
+	<li>{{#linkTo 'Configuration'}}<i class="icon-gears"></i> Configuration{{/linkTo}}</li>
+	<li>{{#linkTo 'Credits'}}<i class="icon-linux"></i> Credits{{/linkTo}}</li>
+</ul>

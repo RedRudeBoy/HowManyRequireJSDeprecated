@@ -13,7 +13,7 @@ define([
  * Application
  */
 	"app/ApplicationController",
-//	"app/ApplicationRoute",
+	"app/ApplicationRoute",
 	"app/ApplicationView",
 //	"app/FailureRoute",
 //	"app/FailureView",
@@ -87,6 +87,7 @@ define([
 	
 	"pages/Login/LoginView",
 	"pages/Login/DoLoginView",
+	"pages/Navbar/NavbarRoute",
 	"pages/Navbar/NavbarView",
 	"pages/Notifications/NotificationsRoute",
 	"pages/Notifications/NotificationsView",
@@ -108,7 +109,7 @@ define([
 //	
 	//Application
 	ApplicationController,
-//	ApplicationRoute,
+	ApplicationRoute,
 	ApplicationView,
 //	FailureRoute,
 //	FailureView,
@@ -175,6 +176,7 @@ define([
 	HowManysWindRoseView,
 	
 	LoginView, DoLoginView,
+	NavbarRoute,
 	NavbarView,
 	NotificationsRoute,
 	NotificationsView,
@@ -201,11 +203,15 @@ define([
 //		ApplicationAdapter: DS.LSAdapter.extend({
 //		  namespace: 'HM'
 //		}),
+//		Store: DS.Store.extend({
+////			revision: 13,
+//			adapter: DS.FixtureAdapter.create()
+//		}),
 /**
  * Application
  */
 		ApplicationController: ApplicationController,
-//		ApplicationRoute: ApplicationRoute,
+		ApplicationRoute: ApplicationRoute,
 		ApplicationView: ApplicationView,
 //		FailureRoute: FailureRoute,
 //		FailureView: FailureView,
@@ -277,6 +283,7 @@ define([
 		HowManysWindRoseView: HowManysWindRoseView,
 
 		LoginView: LoginView, DoLoginView: DoLoginView,
+		NavbarRoute: NavbarRoute,
 		NavbarView: NavbarView,
 		NotificationsRoute: NotificationsRoute,
 		NotificationsView: NotificationsView,

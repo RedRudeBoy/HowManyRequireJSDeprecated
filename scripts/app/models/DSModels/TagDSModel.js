@@ -1,7 +1,8 @@
 define(["DS"], function(DS){
 
 var Tag = DS.Model.extend({
-	children: DS.hasMany('Tag', {inverse: 'parent'})
+	toString: function() {return 'Tag'}
+  , children: DS.hasMany('Tag', {inverse: 'parent'})
   , parent:   DS.belongsTo('Tag', {inverse: 'children'})
   , name: DS.attr('string')
   , icon: DS.attr('string')
@@ -118,7 +119,7 @@ Tag.FIXTURES = [
 	},
 	{	id: 23,
 		name: 'Game Of Thrones',
-		icon: 'flag',
+		icon: 'flag-checkered',
 		parent: 17
 	}
 ];

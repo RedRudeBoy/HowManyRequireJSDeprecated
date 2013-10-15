@@ -32,7 +32,7 @@
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	transition: all 0.3s ease;
-	
+/*	
 	background-color: #1b1b1b;
 	background-image: -moz-linear-gradient(top, #222222, #111111);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
@@ -42,10 +42,20 @@
 	background-repeat: repeat-x;
 	border-color: #252525;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+	*/
+	background: whitesmoke;
 }
 #NavbarMenuSmallContent a {
-	color: #999999;
+	/*color: #999999;*/
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	
+	color: grey;
+	font-size: large;
+	line-height: 70px;
+}
+#NavbarMenuSmallContent i {
+	position: relative;
+	top: 5px;
 }
 #NavbarMenuSmallContent a:hover {
 	color: black;

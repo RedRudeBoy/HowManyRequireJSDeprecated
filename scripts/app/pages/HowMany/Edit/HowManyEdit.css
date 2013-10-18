@@ -220,10 +220,48 @@ Default media:
 	margin-left: 0px;
 }
 
-
-
-
-
+#HowManyEditRecursion {
+	text-align: center;
+}
+#HowManyEditRecursionUpUp {
+	background-color: #A9F5BC;
+}
+#HowManyEditRecursionUp {
+	background-color: #D0F5A9;
+}
+#HowManyEditRecursionMeh {
+	background-color: #F2F5A9;
+}
+#HowManyEditRecursionDown {
+	background-color: #F5D0A9;
+}
+#HowManyEditRecursionDownDown {
+	background-color: #F5A9A9;
+}
+.HowManyEditRecursionChevron {
+   display:inline-block;
+    vertical-align: bottom;
+/*    font-size: 40px;
+    line-height: 50px;
+    background-color:black;
+    color:white;
+    width: 50px;
+    height: 50px;
+    text-align: center;*/
+}
+.HowManyEditRecursionLevel {
+	margin-bottom: 10px;
+}
+.HowManyEditRecursionDate {
+	border: 1px solid black;
+}
+.HowManyEditRecursionDateBig {
+	display:inline-block;
+	vertical-align: bottom;
+}
+.HowManyEditRecursionAlarms {
+	margin-top: 10px;
+}
 
 
 .arrow-left {

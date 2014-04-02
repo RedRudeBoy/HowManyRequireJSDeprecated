@@ -16,7 +16,7 @@ Quants mesos fa que no faig una escapada?
 1. [ember](http://emberjs.com/) - Framework
 2. [handlebars](http://handlebarsjs.com/) - Semantic Templates compatible with Mustache
 3. [jQuery](http://jquery.com/) - Cross-browser compatibility for DOM manipulation, ajax...
-4. [jQuery Mobile](http://jquerymobile.com/) - Used for ListViews
+4. [jQuery Mobile](http://jquerymobile.com/) - Used for [ListViews](http://demos.jquerymobile.com/1.4.0/listview-grid/listview-grid.html)([jsfiddle](http://jsfiddle.net/Shreerang/ggzHT/)) & [Panels](http://demos.jquerymobile.com/1.4.2/panel/)
 5. [RequireJS](http://requirejs.org/) - JavaScript modular script loader
 6. [Require-css](https://github.com/guybedford/require-css) - CSS loader plugin for RequireJS
 7. [RequireJS-plugins](https://github.com/millermedeiros/requirejs-plugins) - Small set of plugins for RequireJS

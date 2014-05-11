@@ -28,23 +28,27 @@ Quants mesos fa que no faig una escapada?
 ## In the roadmap ##
 1. [Moment.js](http://momentjs.com/) - Library for parsing, validating, manipulating, and formatting dates
 2. [d3js](http://d3js.org/) - Library for manipulating documents based on data
+    1. [ember-charts](http://addepar.github.io/#/ember-charts/overview)
+    2. [d3-ember-simple-dashboard](http://www.samselikoff.com/projects/d3-ember-simple-dashboard/part5-flexibility.html)
+    3. [CrowdStrike/ember-timetree](https://github.com/CrowdStrike/ember-timetree) - Visualize hierarchical timeline data. Built with Ember.js and D3.js
 3. [Raphaël](http://raphaeljs.com/) - Library that should simplify your work with vector graphics on the web
-4. [CrowdStrike/ember-timetree](https://github.com/CrowdStrike/ember-timetree) - Visualize hierarchical timeline data. Built with Ember.js and D3.js
-5. [StoicLoofah/chronoline.js](https://github.com/StoicLoofah/chronoline.js) - Library for making a chronology timeline out of events on a horizontal timescale
-6. [emberjs/list-view](https://github.com/emberjs/list-view) - An efficient incremental rendering list view for large lists
-7. [∞.js](http://airbnb.github.io/infinity/) - Speeds up scrolling through long lists and keeps your infinite feeds smooth and stable for your users
-8. [iScroll](http://cubiq.org/) - Smooth scrolling for the web
-9. [Messenger](http://github.hubspot.com/messenger/) - Alerts for the 21st century
-10. [emberjs-addons/ember-bootstrap](https://github.com/emberjs-addons/ember-bootstrap) - A set of UI elements styled using the Boostrap toolkit to use with Ember.js
-11. [todc/todc-bootstrap](https://github.com/todc/todc-bootstrap) - Google-styled theme for Twitter Bootstrap
-12. [Ember.I18n](https://github.com/jamesarosen/ember-i18n) - Internationalization for Ember
-13. [Bootstrap Arrows](http://bootstrap-arrows.iarfhlaith.com/) - Include arrows at any angle
-14. [pfefferle/openwebicons](https://github.com/pfefferle/openwebicons) - Set of icons to show the support for the Open Web
-15. [kurakin/node-vcal](https://github.com/kurakin/node-vcal) - Create and parse ics files
-16. [dgeb/grunt-ember-templates](https://github.com/dgeb/grunt-ember-templates) - Precompile Handlebars templates for Ember.js
+    1. [StoicLoofah/chronoline.js](https://github.com/StoicLoofah/chronoline.js) - Library for making a chronology timeline out of events on a horizontal timescale ([demo](http://stoicloofah.github.io/chronoline.js/))
+4. [emberjs/list-view](https://github.com/emberjs/list-view) - An efficient incremental rendering list view for large lists
+    1. [iScroll](http://cubiq.org/) - Smooth scrolling for the web
+    2. [∞.js](http://airbnb.github.io/infinity/) - Speeds up scrolling through long lists and keeps your infinite feeds smooth and stable for your users
+5. [Messenger](http://github.hubspot.com/messenger/) - Alerts for the 21st century
+6. [ember-addons/bootstrap-for-ember](http://ember-addons.github.io/bootstrap-for-ember/dist/) - Bootstrap for Ember.js is a collection of UI components based on Twitter Bootstrap v3 for Ember.js
+7. [ember-addons/bootstrap-for-ember](http://ember-addons.github.io/ember-forms) - Smart, Intuitive forms for Ember.js styled with Bootstrap, Multi layouts and Validation support.
+8. [joinspoton/ember-calendar](http://joinspoton.github.io/ember-calendar/) - Calendar component for Ember.js
+9. [todc/todc-bootstrap](https://github.com/todc/todc-bootstrap) - Google-styled theme for Twitter Bootstrap
+10. [Ember.I18n](https://github.com/jamesarosen/ember-i18n) - Internationalization for Ember
+11. [Bootstrap Arrows](http://bootstrap-arrows.iarfhlaith.com/) - Include arrows at any angle
+12. [pfefferle/openwebicons](https://github.com/pfefferle/openwebicons) - Set of icons to show the support for the Open Web
+13. [kurakin/node-vcal](https://github.com/kurakin/node-vcal) - Create and parse ics files
+14. [dgeb/grunt-ember-templates](https://github.com/dgeb/grunt-ember-templates) - Precompile Handlebars templates for Ember.js
 
 ## In the long-term roadmap ##
-1. This app requires a lot of information of the user, in a perfect world, all this data must be private & personal. [It's necessary to build a backend with webfinger](https://github.com/RedRudeBoy/HowManyBackendNodeDeprecated) for create independent nodes [("pods")](http://podupti.me/) like [diaspora](https://diasporafoundation.org/about).
+This app requires a lot of information of the user, in a perfect world, all this data must be private & personal. [It's necessary to build a backend with webfinger](https://github.com/RedRudeBoy/HowManyBackendNodeDeprecated) for create independent nodes [("pods")](http://podupti.me/) like [diaspora](https://diasporafoundation.org/about).
 
 ## Interesting Ember plugins, probably merged in Ember 1.1 ##
 1. [billysbilling/ember-animated-outlet](https://github.com/billysbilling/ember-animated-outlet) - Animated transitions

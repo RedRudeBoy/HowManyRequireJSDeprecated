@@ -27,6 +27,7 @@ Quants mesos fa que no faig una escapada?
 
 ## In the roadmap ##
 1. [Moment.js](http://momentjs.com/) - Library for parsing, validating, manipulating, and formatting dates
+    1. [icambron/twix.js](http://isaaccambron.com/twix.js/)- Twix.js is a Moment.js plugin for working with time ranges. Use it to manipulate, interrogate, and intelligently format a block of time.
 2. [d3js](http://d3js.org/) - Library for manipulating documents based on data
     1. [ember-charts](http://addepar.github.io/#/ember-charts/overview)
     2. [d3-ember-simple-dashboard](http://www.samselikoff.com/projects/d3-ember-simple-dashboard/part5-flexibility.html)
@@ -38,7 +39,7 @@ Quants mesos fa que no faig una escapada?
     2. [∞.js](http://airbnb.github.io/infinity/) - Speeds up scrolling through long lists and keeps your infinite feeds smooth and stable for your users
 5. [Messenger](http://github.hubspot.com/messenger/) - Alerts for the 21st century
 6. [ember-addons/bootstrap-for-ember](http://ember-addons.github.io/bootstrap-for-ember/dist/) - Bootstrap for Ember.js is a collection of UI components based on Twitter Bootstrap v3 for Ember.js
-7. [ember-addons/bootstrap-for-ember](http://ember-addons.github.io/ember-forms) - Smart, Intuitive forms for Ember.js styled with Bootstrap, Multi layouts and Validation support.
+7. [ember-addons/ember-forms](http://ember-addons.github.io/ember-forms) - Smart, Intuitive forms for Ember.js styled with Bootstrap, Multi layouts and Validation support.
 8. [joinspoton/ember-calendar](http://joinspoton.github.io/ember-calendar/) - Calendar component for Ember.js
 9. [todc/todc-bootstrap](https://github.com/todc/todc-bootstrap) - Google-styled theme for Twitter Bootstrap
 10. [Ember.I18n](https://github.com/jamesarosen/ember-i18n) - Internationalization for Ember
@@ -50,7 +51,7 @@ Quants mesos fa que no faig una escapada?
 ## In the long-term roadmap ##
 This app requires a lot of information of the user, in a perfect world, all this data must be private & personal. [It's necessary to build a backend with webfinger](https://github.com/RedRudeBoy/HowManyBackendNodeDeprecated) for create independent nodes [("pods")](http://podupti.me/) like [diaspora](https://diasporafoundation.org/about).
 
-## Interesting Ember plugins, probably merged in Ember 1.1 ##
+## Interesting Ember plugins, probably merged in future versions of Emberjs ##
 1. [billysbilling/ember-animated-outlet](https://github.com/billysbilling/ember-animated-outlet) - Animated transitions
 2. [ElteHupkes/ember-query-params](https://github.com/ElteHupkes/ember-query-params) - Optional extra params to router
 
